@@ -1,7 +1,7 @@
 function index(props) {
   return (
-    <div>
-      <h1>Side bar area</h1>
+    <div className='sidebar-container'>
+      <h1>sidebar features</h1>
     </div>
   );
 }
