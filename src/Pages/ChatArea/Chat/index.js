@@ -1,9 +1,9 @@
 function Chat() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div>
+      <p>test message</p>
+    </div>
+  );
 }
 
-export default Chat
+export default Chat;

@@ -1,14 +1,15 @@
-import Chat from "./Chat"
-import MessageBox from "./MessageBox"
+import Chat from './Chat';
+import MessageBox from './MessageBox';
 
 function index() {
-    return (
-        <div>
-            <Chat />
+  return (
+    <div>
+      <h1>Chat Area</h1>
+      <Chat />
 
-           <MessageBox />
-        </div>
-    )
+      <MessageBox />
+    </div>
+  );
 }
 
-export default index
+export default index;
