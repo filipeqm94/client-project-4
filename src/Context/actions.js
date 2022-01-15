@@ -34,7 +34,32 @@ export async function logout(dispatch) {
 }
 
 export async function getUserChats(dispatch, payload) {
-  let response = await fetch(`${DB_URL}`);
-  let data = await response.json();
-  dispatch({ type: 'GET_USER_CHATS', payload: data });
+  try {
+    let response = await fetch(`${DB_URL}`);
+    let data = await response.json();
+    dispatch({ type: 'GET_USER_CHATS', payload: data });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function createChat(dispatch, payload) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    // ids of user2 active chats
+    body: JSON.stringify(payload),
+  };
+
+  try {
+    dispatch({ type: 'CREATE_CHAT' });
+    // update user1 active chat list
+    let response = await fetch(`${DB_URL}/chat/${user1.id}`, requestOptions);
+    let data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }
