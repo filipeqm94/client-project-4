@@ -32,3 +32,9 @@ export async function logout(dispatch) {
   localStorage.removeItem('currentUser');
   localStorage.removeItem('token');
 }
+
+export async function getUserChats(dispatch, payload) {
+  let response = await fetch(`${DB_URL}`);
+  let data = await response.json();
+  dispatch({ type: 'GET_USER_CHATS', payload: data });
+}
