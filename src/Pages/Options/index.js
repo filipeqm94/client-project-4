@@ -1,4 +1,4 @@
-function index(props) {
+function Options(props) {
   return (
     <div className='options-container'>
       <h4>Settings</h4>
@@ -7,4 +7,4 @@ function index(props) {
   );
 }
 
-export default index;
+export default Options;

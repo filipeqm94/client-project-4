@@ -1,7 +1,7 @@
 import Chat from './Chat';
 import MessageBox from './MessageBox';
 
-function index() {
+function ChatArea() {
   return (
     <div className='chat-area-container'>
       <div className='chat-area-info'>
@@ -14,4 +14,4 @@ function index() {
   );
 }
 
-export default index;
+export default ChatArea;

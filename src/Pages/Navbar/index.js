@@ -2,7 +2,7 @@ import Profile from '../Profile';
 import ChatList from '../ChatList';
 import Options from '../Options';
 
-function index(props) {
+function Navbar(props) {
   return (
     <div className='nav-container'>
       <div className='nav-top'>
@@ -16,4 +16,4 @@ function index(props) {
   );
 }
 
-export default index;
+export default Navbar;
