@@ -5,8 +5,7 @@ import SideBar from '../SideBar';
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to Chatter</h1>
+    <div className='main'>
       <Navbar />
       <ChatArea />
       <SideBar />
