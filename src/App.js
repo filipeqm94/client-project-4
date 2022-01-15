@@ -1,9 +1,8 @@
+import AppRoute from './Components/AppRoute';
+import Home from './Pages/Home';
+
 function App() {
-  return (
-    <header>
-      <h1>Chatter</h1>
-    </header>
-  )
+  return <Home />;
 }
 
-export default App
+export default App;
