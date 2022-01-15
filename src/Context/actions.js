@@ -1,4 +1,5 @@
 const DB_URL = process.env.REACT_APP_DB_URL;
+const currentUser = {};
 
 export async function loginUser(dispatch, loginPayload) {
   const requestOptions = {
@@ -33,7 +34,7 @@ export async function logout(dispatch) {
   localStorage.removeItem('token');
 }
 
-export async function getUserChats(dispatch, payload) {
+export async function getUserChatList(dispatch, payload) {
   try {
     let response = await fetch(`${DB_URL}`);
     let data = await response.json();
@@ -43,23 +44,66 @@ export async function getUserChats(dispatch, payload) {
   }
 }
 
-export async function createChat(dispatch, payload) {
+// combined add/remove chat with other users
+export async function updateUserChatList(dispatch, payload) {
   const requestOptions = {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    // ids of user2 active chats
     body: JSON.stringify(payload),
   };
-
   try {
-    dispatch({ type: 'CREATE_CHAT' });
-    // update user1 active chat list
-    let response = await fetch(`${DB_URL}/chat/${user1.id}`, requestOptions);
+    let response = await fetch(`${DB_URL}/${currentUser.id}`, requestOptions);
     let data = await response.json();
-    return data;
+    dispatch({ type: 'GET_USER_CHATS', payload: data });
   } catch (error) {
     console.error(error);
   }
 }
+
+// consider handling this on comp - may remove
+// alternative is to have single update function
+// export async function addChat(dispatch, payload) {
+//   const requestOptions = {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     // ids of user2 active chats
+//     body: JSON.stringify(payload),
+//   };
+
+//   try {
+//     dispatch({ type: 'ADD_CHAT' });
+//     // update user1 active chat list
+//     let response = await fetch(`${DB_URL}/chat/${user1.id}`, requestOptions);
+//     let data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// consider handling this on comp - may remove
+// alternative is to have single update function
+// export async function removeChat(dispatch, payload) {
+//   const requestOptions = {
+//     method: 'PUT',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     // ids of user2 active chats
+//     body: JSON.stringify(payload),
+//   };
+
+//   try {
+//     dispatch({ type: 'REMOVE_CHAT' });
+//     // update user1 active chat list
+//     let response = await fetch(`${DB_URL}/chat/${user1.id}`, requestOptions);
+//     let data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
