@@ -1,3 +1,21 @@
+/* START -- FOR DESIGN AND TESTING */
+.main > * {
+  border: 1px solid white;
+}
+
+.nav-container > * {
+  border: 1px solid white;
+}
+
+.chat-area-container > * {
+  border: 1px solid white;
+}
+
+.sidebar-container > * {
+  border: 1px solid white;
+}
+/* END -- FOR DESIGN AND TESTING */
+
 html,
 body {
   margin: 0;
@@ -47,8 +65,6 @@ LEFT SIDE */
   grid-column: 2;
   display: grid;
   grid-template-rows: 1fr 4fr 1fr;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
 }
 
 .chat-area-info {
