@@ -26,3 +26,9 @@ export async function loginUser(dispatch, loginPayload) {
     dispatch({ type: 'LOGIN_ERROR', error: error });
   }
 }
+
+export async function logout(dispatch) {
+  dispatch({ type: 'LOGOUT' });
+  localStorage.removeItem('currentUser');
+  localStorage.removeItem('token');
+}
