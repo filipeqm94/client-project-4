@@ -1,4 +1,4 @@
-function index(props) {
+function SideBar(props) {
   return (
     <div className='sidebar-container'>
       <h1>sidebar features</h1>
@@ -6,4 +6,4 @@ function index(props) {
   );
 }
 
-export default index;
+export default SideBar;
