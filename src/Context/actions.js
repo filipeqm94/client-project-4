@@ -22,9 +22,9 @@ export const loginUser = async (dispatch, payload) => {
   }
 }
 
-export const logout = async (dispatch) => {
-  dispatch({ type: 'LOGOUT' });
-  localStorage.removeItem('currentUser');
+export const logout = async dispatch => {
+  dispatch({ type: 'LOGOUT' })
+  localStorage.removeItem('currentUser')
   // need to blacklist token
   localStorage.removeItem('token')
 }
@@ -65,8 +65,8 @@ export const getChatMessages = async dispatch => {
 
 export const createMessage = async (dispatch, payload) => {
   try {
-    let response = await axiosInstance.post(`${chat.id}/new`, payload);
-    let data = response.json();
+    let response = await axiosInstance.post(`${chat.id}/new`, payload)
+    let data = response.json()
 
     dispatch({ type: 'CREATE_MESSAGE', payload: data })
   } catch (error) {
