@@ -46,7 +46,11 @@ export async function updateUserChatList(dispatch, payload) {
     let response = await axiosInstance.put(`update/${currentUser.id}`, payload)
     let data = await response.json()
 
+<<<<<<< HEAD
     dispatch({ type: 'UPDATE_USER_CHATS', payload: data })
+=======
+    dispatch({ type: 'GET_USER_CHATS', payload: data });
+>>>>>>> 2e3d1c8 (added async actions)
   } catch (error) {
     console.error(error)
   }
@@ -65,8 +69,13 @@ export const getChatMessages = async dispatch => {
 
 export const createMessage = async (dispatch, payload) => {
   try {
+<<<<<<< HEAD
     let response = await axiosInstance.post(`${chat.id}/new`, payload)
     let data = response.json()
+=======
+    let response = await axiosInstance.post(`${chat.id}/new`, payload);
+    let data = response.json();
+>>>>>>> 2e3d1c8 (added async actions)
 
     dispatch({ type: 'CREATE_MESSAGE', payload: data })
   } catch (error) {
