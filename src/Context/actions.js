@@ -23,7 +23,7 @@ export const loginUser = async (dispatch, payload) => {
 };
 
 export const logout = async (dispatch) => {
-  dispatch({ type: 'LOGOUT' });
+  dispatch({ type: 'LOG_OUT' });
   localStorage.removeItem('currentUser');
   // need to blacklist token
   localStorage.removeItem('token');
@@ -46,7 +46,7 @@ export async function updateUserChatList(dispatch, payload) {
     let response = await axiosInstance.put(`update/${currentUser.id}`, payload);
     let data = await response.json();
 
-    dispatch({ type: 'GET_USER_CHATS', payload: data });
+    dispatch({ type: 'UPDATE_USER_CHATS', payload: data });
   } catch (error) {
     console.error(error);
   }
