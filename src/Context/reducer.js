@@ -1,8 +1,16 @@
-import React from 'react';
+import { useReducer } from 'react';
+
+let user = localStorage.getItem('currentUser')
+  ? JSON.parse(localStorage.getItem('currentUser'))
+  : '';
+let token = localStorage.getItem('token')
+  ? JSON.parse(localStorage.getItem('token'))
+  : '';
 
 // initial state tree
-const initialState = {
-  userAuth: false,
+export const userInitialState = {
+  user: user,
+  token: token,
   settings: {
     langPref: 'nopref',
     active: true,
@@ -12,6 +20,12 @@ const initialState = {
   },
 };
 
-function reducer(state = initialState, action) {}
+export const chatInitialState = {
+  messages: [
+    {
+      body: '',
+    },
+  ],
+};
 
-export default reducer;
+export const AuthReducer = (userInitialState, action) => {};

@@ -1,23 +1,17 @@
-const DB_URL = process.env.REACT_APP_DB_URL;
+import { axiosInstance } from './axios';
+
 const currentUser = {};
+const chat = {};
 
-export async function loginUser(dispatch, loginPayload) {
-  const requestOptions = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(loginPayload),
-  };
-
+export const loginUser = async (dispatch, payload) => {
   try {
     dispatch({ type: 'REQUEST_LOGIN' });
-    let response = await fetch(`${DB_URL}/login`, requestOptions);
+    let response = await axiosInstance.post('/login', payload);
     let data = await response.json();
 
     if (data.user) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: data });
-      localStorage.setItem('currentUser', JSON.stringify(data));
+      localStorage.setItem('currentUser', data);
       return data;
     }
 
@@ -26,84 +20,56 @@ export async function loginUser(dispatch, loginPayload) {
   } catch (error) {
     dispatch({ type: 'LOGIN_ERROR', error: error });
   }
-}
+};
 
-export async function logout(dispatch) {
+export const logout = async (dispatch) => {
   dispatch({ type: 'LOGOUT' });
   localStorage.removeItem('currentUser');
+  // need to blacklist token
   localStorage.removeItem('token');
-}
+};
 
-export async function getUserChatList(dispatch, payload) {
+export const getUserChatList = async (dispatch) => {
   try {
-    let response = await fetch(`${DB_URL}`);
+    let response = await axiosInstance.get('/chats');
     let data = await response.json();
+
     dispatch({ type: 'GET_USER_CHATS', payload: data });
   } catch (error) {
     console.error(error);
   }
-}
+};
 
 // combined add/remove chat with other users
 export async function updateUserChatList(dispatch, payload) {
-  const requestOptions = {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  };
   try {
-    let response = await fetch(`${DB_URL}/${currentUser.id}`, requestOptions);
+    let response = await axiosInstance.put(`update/${currentUser.id}`, payload);
     let data = await response.json();
+
     dispatch({ type: 'GET_USER_CHATS', payload: data });
   } catch (error) {
     console.error(error);
   }
 }
 
-// consider handling this on comp - may remove
-// alternative is to have single update function
-// export async function addChat(dispatch, payload) {
-//   const requestOptions = {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     // ids of user2 active chats
-//     body: JSON.stringify(payload),
-//   };
+export const getChatMessages = async (dispatch) => {
+  try {
+    let response = await axiosInstance.get(`${chat.id}/`);
+    let data = await response.json();
 
-//   try {
-//     dispatch({ type: 'ADD_CHAT' });
-//     // update user1 active chat list
-//     let response = await fetch(`${DB_URL}/chat/${user1.id}`, requestOptions);
-//     let data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+    dispatch({ type: 'GET_CHAT_MESSAGES', payload: data });
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-// consider handling this on comp - may remove
-// alternative is to have single update function
-// export async function removeChat(dispatch, payload) {
-//   const requestOptions = {
-//     method: 'PUT',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     // ids of user2 active chats
-//     body: JSON.stringify(payload),
-//   };
+export const createMessage = async (dispatch, payload) => {
+  try {
+    let response = await axiosInstance.post(`${chat.id}/new`, payload);
+    let data = response.json();
 
-//   try {
-//     dispatch({ type: 'REMOVE_CHAT' });
-//     // update user1 active chat list
-//     let response = await fetch(`${DB_URL}/chat/${user1.id}`, requestOptions);
-//     let data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+    dispatch({ type: 'CREATE_MESSAGE', payload: data });
+  } catch (error) {
+    console.error(error);
+  }
+};
