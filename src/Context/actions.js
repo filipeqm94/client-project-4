@@ -15,15 +15,15 @@ export const loginUser = async (dispatch, payload) => {
       return data;
     }
 
-    dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] });
-    return;
+    dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] })
+    return
   } catch (error) {
-    dispatch({ type: 'LOGIN_ERROR', error: error });
+    dispatch({ type: 'LOGIN_ERROR', error: error })
   }
 };
 
 export const logout = async (dispatch) => {
-  dispatch({ type: 'LOG_OUT' });
+  dispatch({ type: 'LOGOUT' });
   localStorage.removeItem('currentUser');
   // need to blacklist token
   localStorage.removeItem('token');
@@ -36,7 +36,7 @@ export const getUserChatList = async (dispatch) => {
 
     dispatch({ type: 'GET_USER_CHATS', payload: data });
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
 };
 
@@ -46,9 +46,9 @@ export async function updateUserChatList(dispatch, payload) {
     let response = await axiosInstance.put(`update/${currentUser.id}`, payload);
     let data = await response.json();
 
-    dispatch({ type: 'UPDATE_USER_CHATS', payload: data });
+    dispatch({ type: 'UPDATE_USER_CHATS', payload: data })
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
 }
 
@@ -66,7 +66,7 @@ export const getChatMessages = async (dispatch) => {
 export const createMessage = async (dispatch, payload) => {
   try {
     let response = await axiosInstance.post(`${chat.id}/new`, payload);
-    let data = await response.json();
+    let data = response.json();
 
     dispatch({ type: 'CREATE_MESSAGE', payload: data });
   } catch (error) {
