@@ -1,5 +1,6 @@
 import { axiosInstance } from './axios';
 
+// not sure we need this when we have the rest hooked up
 const currentUser = {};
 const chat = {};
 
@@ -29,6 +30,7 @@ export const logout = async (dispatch) => {
   localStorage.removeItem('token');
 };
 
+// get all active chats for the user
 export const getUserChatList = async (dispatch) => {
   try {
     let response = await axiosInstance.get('/chats');
@@ -40,7 +42,7 @@ export const getUserChatList = async (dispatch) => {
   }
 };
 
-// combined add/remove chat with other users
+// add or remove chats to user chatlist
 export async function updateUserChatList(dispatch, payload) {
   try {
     let response = await axiosInstance.put(`update/${currentUser.id}`, payload);
@@ -52,6 +54,7 @@ export async function updateUserChatList(dispatch, payload) {
   }
 }
 
+// get chat messages for a specific chat between user_1 and user_2
 export const getChatMessages = async (dispatch) => {
   try {
     let response = await axiosInstance.get(`${chat.id}/`);
@@ -63,6 +66,7 @@ export const getChatMessages = async (dispatch) => {
   }
 };
 
+// create new message in specific chat between user_1 and user_2
 export const createMessage = async (dispatch, payload) => {
   try {
     let response = await axiosInstance.post(`${chat.id}/new`, payload);
