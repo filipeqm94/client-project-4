@@ -1,34 +1,34 @@
 //components imports
-import Home from '../Pages/Home'
-import Login from '../Pages/Login'
-import SignUp from '../Pages/SignUp'
-import Profile from '../Pages/Profile'
+import Home from '../Pages/Home';
+import Login from '../Pages/Login';
+import SignUp from '../Pages/SignUp';
+import Profile from '../Pages/Profile';
 
 //routes array
-    //define the path
-    //component to be rendered
-    //`isPrivate` routes are only accessable for users logged in
+//define the path
+//component to be rendered
+//`isPrivate` routes are only accessable for users logged in
 const routes = [
   {
     path: '/',
-    component: Home,
+    element: <Home />,
     isPrivate: false,
   },
   {
     path: '/login',
-    component: Login,
+    element: <Login />,
     isPrivate: false,
   },
   {
     path: '/signup',
-    component: SignUp,
+    element: <SignUp />,
     isPrivate: false,
   },
   {
     path: '/profile/:id',
-    component: Profile,
+    element: <Profile />,
     isPrivate: true,
   },
-]
+];
 
-export default routes
+export default routes;

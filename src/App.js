@@ -1,16 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import AppRoute from './Components/AppRoute';
 
-// import AppRoute from './Components/AppRoute'
-import Home from './Pages/Home'
-
-const axios = require('axios')
+const axios = require('axios');
 
 function App() {
-  useEffect(() => {
-    axios.get(process.env.REACT_APP_DB_URL + "objects/").then(console.log).catch(console.error)
-  }, [])
+  // useEffect(() => {
+  //   axios
+  //     .get(process.env.REACT_APP_DB_URL + 'objects/')
+  //     .then(console.log)
+  //     .catch(console.error);
+  // }, []);
 
-  return <Home />
+  return (
+    <div>
+      <AppRoute />;
+    </div>
+  );
 }
 
-export default App
+export default App;

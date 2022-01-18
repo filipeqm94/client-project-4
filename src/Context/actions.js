@@ -6,7 +6,7 @@ const chat = {};
 export const loginUser = async (dispatch, payload) => {
   try {
     dispatch({ type: 'REQUEST_LOGIN' });
-    let response = await axiosInstance.post('/login', payload);
+    let response = await axiosInstance.post('/login/', payload);
     let data = await response.json();
 
     if (data.user) {
@@ -15,10 +15,10 @@ export const loginUser = async (dispatch, payload) => {
       return data;
     }
 
-    dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] })
-    return
+    dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] });
+    return;
   } catch (error) {
-    dispatch({ type: 'LOGIN_ERROR', error: error })
+    dispatch({ type: 'LOGIN_ERROR', error: error });
   }
 };
 
@@ -36,7 +36,7 @@ export const getUserChatList = async (dispatch) => {
 
     dispatch({ type: 'GET_USER_CHATS', payload: data });
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 };
 
@@ -46,9 +46,9 @@ export async function updateUserChatList(dispatch, payload) {
     let response = await axiosInstance.put(`update/${currentUser.id}`, payload);
     let data = await response.json();
 
-    dispatch({ type: 'UPDATE_USER_CHATS', payload: data })
+    dispatch({ type: 'UPDATE_USER_CHATS', payload: data });
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 }
 
