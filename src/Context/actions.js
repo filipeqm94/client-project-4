@@ -7,11 +7,13 @@ export const loginUser = async (dispatch, payload) => {
   try {
     dispatch({ type: 'REQUEST_LOGIN' });
     let response = await axiosInstance.post('/login/', payload);
-    let data = await response.json();
+    let data = await response.data.access;
 
     if (data.user) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: data });
-      localStorage.setItem('currentUser', data);
+      localStorage.setItem('access_token', response.data.access);
+      localStorage.setItem('refresh_token', response.data.refresh);
+      console.log(data);
       return data;
     }
 
@@ -25,7 +27,6 @@ export const loginUser = async (dispatch, payload) => {
 export const logout = async (dispatch) => {
   dispatch({ type: 'LOGOUT' });
   localStorage.removeItem('currentUser');
-  // need to blacklist token
   localStorage.removeItem('token');
 };
 
