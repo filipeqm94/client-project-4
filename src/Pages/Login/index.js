@@ -1,45 +1,39 @@
 import React, { useState } from 'react';
-import axiosInstance from '../../Context/axios';
+import { loginUser, useAuthState, useAuthDispatch } from '../../Context';
 
-function Login() {
+function Login(props) {
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
 
-  function handleChange({ target }) {
+  const dispatch = useAuthDispatch();
+
+  async function handleLogin(target) {
+    target.preventDefault();
     setLoginForm((prevLoginForm) => ({
       ...prevLoginForm,
       [target.name]: target.value,
     }));
-  }
 
-  async function handleSubmit(event) {
-    event.preventDefault();
     try {
-      const response = await axiosInstance.post('login/', loginForm);
-      axiosInstance.defaults.headers['Authorization'] =
-        'JWT ' + response.data.access;
-      localStorage.setItem('access_token', response.data.access);
-      localStorage.setItem('refresh_token', response.data.refresh);
+      let response = await loginUser(dispatch, loginForm);
+      if (!response.user) {
+        return props.history.push('/');
+      }
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   }
 
   return (
     <div>
       Login
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          //action
-        }}
-      >
+      <form onSubmit={handleLogin}>
         <label>
           Username:
           <input
             name='username'
             type='text'
             value={loginForm.username}
-            onChange={handleChange}
+            onChange={handleLogin}
           />
         </label>
         <label>
@@ -48,7 +42,7 @@ function Login() {
             name='password'
             type='password'
             value={loginForm.password}
-            onChange={handleChange}
+            onChange={handleLogin}
           />
         </label>
         <input type='submit' value='Submit' />

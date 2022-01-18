@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import AppRoute from './Components/AppRoute';
-
+import { AuthProvider } from './Context';
 const axios = require('axios');
 
 function App() {
@@ -12,9 +12,9 @@ function App() {
   // }, []);
 
   return (
-    <div>
+    <AuthProvider>
       <AppRoute />
-    </div>
+    </AuthProvider>
   );
 }
 
