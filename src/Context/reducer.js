@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
 
 let user = localStorage.getItem('currentUser')
   ? JSON.parse(localStorage.getItem('currentUser')).user
@@ -29,6 +29,10 @@ export const chatInitialState = {
     },
   ],
   loading: true,
+};
+
+export const messageInitialState = {
+  status: null,
 };
 
 export const AuthReducer = (userInitialState, action) => {

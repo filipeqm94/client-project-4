@@ -66,7 +66,7 @@ export const getChatMessages = async (dispatch) => {
 export const createMessage = async (dispatch, payload) => {
   try {
     let response = await axiosInstance.post(`${chat.id}/new`, payload);
-    let data = response.json();
+    let data = await response.json();
 
     dispatch({ type: 'CREATE_MESSAGE', payload: data });
   } catch (error) {
