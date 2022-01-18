@@ -4,6 +4,35 @@ import { axiosInstance } from './axios';
 const currentUser = {};
 const chat = {};
 
+// async function handleLogin(event) {
+//   event.preventDefault()
+//   try {
+//     const response = await axiosInstance.post('login/', loginForm)
+//     axiosInstance.defaults.headers['Authorization'] =
+//       'JWT ' + response.data.access
+//     localStorage.setItem('access_token', response.data.access)
+//     localStorage.setItem('refresh_token', response.data.refresh)
+//     // redirect somewhere else once tokens are received
+//   } catch (error) {
+//     throw error
+//   }
+// }
+
+// async function handleLogout() {
+//   try {
+//     const response = axiosInstance.post('logout/', {
+//       refresh_token: localStorage.getItem('refresh_token'),
+//     })
+//     localStorage.removeItem('access_token')
+//     localStorage.removeItem('refresh_token')
+//     axiosInstance.defaults.headers['Authorization'] = null
+
+//     // redirect somewhere else once logged out
+//   } catch (err) {
+//     console.error(err)
+//   }
+// }
+
 export const loginUser = async (dispatch, payload) => {
   try {
     dispatch({ type: 'REQUEST_LOGIN' });
