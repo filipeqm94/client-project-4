@@ -2,10 +2,14 @@ import axios from 'axios'
 
 const baseURL = process.env.REACT_APP_DB_URL
 
+const baseURL = process.env.REACT_APP_DB_URL;
+
 const axiosInstance = axios.create({
-  baseURL: `${process.env.REACT_APP_DB_URL}/api-auth/`,
+  baseURL: baseURL,
   headers: {
-    Authorization: 'JWT ' + localStorage.getItem('token'),
+    Authorization: localStorage.getItem('access_token')
+      ? 'JWT ' + localStorage.getItem('access_token')
+      : null,
     'Content-Type': 'application/json',
     accept: 'application/json',
   },
