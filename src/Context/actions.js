@@ -1,4 +1,4 @@
-import { axiosInstance } from './axios';
+import axiosInstance from './axios';
 
 const currentUser = {};
 const chat = {};
@@ -6,26 +6,29 @@ const chat = {};
 export const loginUser = async (dispatch, payload) => {
   try {
     dispatch({ type: 'REQUEST_LOGIN' });
-    let response = await axiosInstance.post('/login', payload);
-    let data = await response.json();
+    let response = await axiosInstance.post('/login/', payload);
+    let data = await response.data.access;
+    // data returns token
+    console.log(data);
 
-    if (data.user) {
+    if (data) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: data });
-      localStorage.setItem('currentUser', data);
+      localStorage.setItem('access_token', response.data.access);
+      localStorage.setItem('refresh_token', response.data.refresh);
+      console.log(data);
       return data;
     }
 
-    dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] })
-    return
+    dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] });
+    return;
   } catch (error) {
-    dispatch({ type: 'LOGIN_ERROR', error: error })
+    dispatch({ type: 'LOGIN_ERROR', error: error });
   }
 };
 
 export const logout = async (dispatch) => {
   dispatch({ type: 'LOGOUT' });
   localStorage.removeItem('currentUser');
-  // need to blacklist token
   localStorage.removeItem('token');
 };
 
@@ -36,7 +39,7 @@ export const getUserChatList = async (dispatch) => {
 
     dispatch({ type: 'GET_USER_CHATS', payload: data });
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 };
 
@@ -46,9 +49,9 @@ export async function updateUserChatList(dispatch, payload) {
     let response = await axiosInstance.put(`update/${currentUser.id}`, payload);
     let data = await response.json();
 
-    dispatch({ type: 'UPDATE_USER_CHATS', payload: data })
+    dispatch({ type: 'UPDATE_USER_CHATS', payload: data });
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 }
 

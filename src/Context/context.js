@@ -1,35 +1,36 @@
-// import React from 'react';
-// import { useReducer } from 'react';
+import React from 'react';
+import { useReducer } from 'react';
+import { AuthReducer, userInitialState } from './reducer';
 
-// const AuthStateContext = React.createContext();
-// const AuthDispatchContext = React.createContext();
+const AuthStateContext = React.createContext();
+const AuthDispatchContext = React.createContext();
 
-// export function useAuthState() {
-//   const context = React.useContext(AuthStateContext);
-//   if (context === undefined) {
-//     throw new Error('useAuthState must be used within a AuthProvider');
-//   }
+export function useAuthState() {
+  const context = React.useContext(AuthStateContext);
+  if (context === undefined) {
+    throw new Error('useAuthState must be used within a AuthProvider');
+  }
 
-//   return context;
-// }
+  return context;
+}
 
-// export function useAuthDispatch() {
-//   const context = React.useContext(AuthDispatchContext);
-//   if (context === undefined) {
-//     throw new Error('useAuthDispatch must be used within a AuthProvider');
-//   }
+export function useAuthDispatch() {
+  const context = React.useContext(AuthDispatchContext);
+  if (context === undefined) {
+    throw new Error('useAuthDispatch must be used within a AuthProvider');
+  }
 
-//   return context;
-// }
+  return context;
+}
 
-// export const AuthProvider = ({ children }) => {
-//   const [user, dispatch] = useReducer(AuthReducer, initialState);
+export const AuthProvider = ({ children }) => {
+  const [user, dispatch] = useReducer(AuthReducer, userInitialState);
 
-//   return (
-//     <AuthStateContext.Provider value={user}>
-//       <AuthDispatchContext.Provider value={dispatch}>
-//         {children}
-//       </AuthDispatchContext.Provider>
-//     </AuthStateContext.Provider>
-//   );
-// };
+  return (
+    <AuthStateContext.Provider value={user}>
+      <AuthDispatchContext.Provider value={dispatch}>
+        {children}
+      </AuthDispatchContext.Provider>
+    </AuthStateContext.Provider>
+  );
+};
