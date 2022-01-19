@@ -8,8 +8,10 @@ export const loginUser = async (dispatch, payload) => {
     dispatch({ type: 'REQUEST_LOGIN' });
     let response = await axiosInstance.post('/login/', payload);
     let data = await response.data.access;
+    // data returns token
+    console.log(data);
 
-    if (data.user) {
+    if (data) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: data });
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);

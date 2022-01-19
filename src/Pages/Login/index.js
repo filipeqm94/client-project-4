@@ -1,32 +1,43 @@
 import React, { useState } from 'react';
-import { loginUser, useAuthState, useAuthDispatch } from '../../Context';
+import { useAuthState, useAuthDispatch } from '../../Context/context';
+import { loginUser } from '../../Context';
+import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
 
   const dispatch = useAuthDispatch();
+  const { loading, errorMessage } = useAuthState();
 
-  async function handleLogin(target) {
-    target.preventDefault();
-    setLoginForm((prevLoginForm) => ({
-      ...prevLoginForm,
-      [target.name]: target.value,
-    }));
+  let navigate = useNavigate();
 
+  console.log(loading);
+  console.log(errorMessage);
+
+  async function handleLogin(ev) {
+    ev.preventDefault();
+    setLoginForm({
+      ...loginForm,
+      [ev.target.name]: ev.target.value,
+    });
+  }
+
+  async function handleSubmit(ev) {
+    ev.preventDefault();
     try {
       let response = await loginUser(dispatch, loginForm);
-      if (!response.user) {
-        return props.history.push('/');
+      if (response.type != 'error') {
+        navigate('/');
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 
   return (
     <div>
       Login
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit}>
         <label>
           Username:
           <input

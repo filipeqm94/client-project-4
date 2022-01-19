@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/',
     element: <Home />,
-    isPrivate: false,
+    isPrivate: true,
   },
   {
     path: '/login',
