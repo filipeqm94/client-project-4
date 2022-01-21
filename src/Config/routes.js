@@ -12,22 +12,18 @@ const routes = [
   {
     path: '/',
     element: <Home />,
-    isPrivate: true,
   },
   {
     path: '/login',
     element: <Login />,
-    isPrivate: false,
   },
   {
     path: '/signup',
     element: <SignUp />,
-    isPrivate: false,
   },
   {
     path: '/profile/:id',
     element: <Profile />,
-    isPrivate: true,
   },
 ];
 

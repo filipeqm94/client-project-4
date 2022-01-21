@@ -11,9 +11,6 @@ function Login(props) {
 
   let navigate = useNavigate();
 
-  console.log(loading);
-  console.log(errorMessage);
-
   async function handleLogin(ev) {
     ev.preventDefault();
     setLoginForm({
@@ -24,19 +21,13 @@ function Login(props) {
 
   async function handleSubmit(ev) {
     ev.preventDefault();
-    try {
-      let response = await loginUser(dispatch, loginForm);
-      if (response.type != 'error') {
-        navigate('/');
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    loginUser(dispatch, loginForm)
   }
 
   return (
     <div>
       Login
+      {loading ? <p>Loading</p> : null}
       <form onSubmit={handleSubmit}>
         <label>
           Username:

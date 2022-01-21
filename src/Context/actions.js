@@ -4,26 +4,30 @@ const currentUser = {};
 const chat = {};
 
 export const loginUser = async (dispatch, payload) => {
-  try {
-    dispatch({ type: 'REQUEST_LOGIN' });
-    let response = await axiosInstance.post('/login/', payload);
-    let data = await response.data.access;
-    // data returns token
-    console.log(data);
-
-    if (data) {
-      dispatch({ type: 'LOGIN_SUCCESS', payload: data });
-      localStorage.setItem('access_token', response.data.access);
-      localStorage.setItem('refresh_token', response.data.refresh);
-      console.log(data);
-      return data;
-    }
-
-    dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] });
-    return;
-  } catch (error) {
-    dispatch({ type: 'LOGIN_ERROR', error: error });
-  }
+  dispatch({ type: 'REQUEST_LOGIN' });
+  axiosInstance
+    .post('login/', payload)
+    .then((res) => {
+      if ('response' in res) throw res.response;
+      console.log('\n<<<<< Login Success >>>>>\n', res);
+      const { access, refresh } = res.data;
+      const { username, primary_language, learning_language } = JSON.parse(
+        atob(refresh.split('.')[1])
+      );
+      const user = {
+        username,
+        primary_language,
+        learning_language,
+        access,
+        refresh,
+      };
+      dispatch({ type: 'LOGIN_SUCCESS', payload: user });
+    })
+    .catch((error) => {
+      console.log('\n<<<<< Login Error >>>>>\n', error);
+      
+      // dispatch({ type: 'LOGIN_ERROR'}); //error
+    });
 };
 
 export const logout = async (dispatch) => {
