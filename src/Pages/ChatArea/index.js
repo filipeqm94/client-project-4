@@ -11,15 +11,15 @@ function ChatArea() {
   ]);
 
   const chatSocket = new WebSocket(
-    process.env.REACT_APP_WS_URL + 'ws/' + chatRooms[0].chat_room_group_id + '/'
+    process.env.REACT_APP_WS_URL + chatRooms[0].chat_room_group_id + '/'
   );
 
   chatSocket.onmessage = function (e) {
     console.log('<<<<< On Message >>>>>');
     console.log(e);
-    // const data = JSON.parse(e.data);
-    // document.querySelector('#chat-text-area').textContent +=
-    //   data.message + '\n';
+    const data = JSON.parse(e.data);
+    document.querySelector('#chat-text-area').textContent +=
+      data.message + '\n';
   };
 
   chatSocket.onclose = function (e) {
