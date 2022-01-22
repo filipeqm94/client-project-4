@@ -17,13 +17,6 @@ function MessageBox({ chatSocket }) {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="msg-box-container">
-      <div className="msg-box-form">
-        <form>
-          <input className="msg-body" placeholder="Message Victor W." />
-          <input type="submit" value="Send" />
-=======
     <div className='msg-box-container'>
       <div className='msg-box-form'>
         <p id='chat-text-area'></p>
@@ -36,7 +29,6 @@ function MessageBox({ chatSocket }) {
           <button type='submit' value='Send' onClick={submitHandler}>
             Submit
           </button>
->>>>>>> 84c6f85 (co coding testing)
         </form>
       </div>
     </div>
