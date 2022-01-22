@@ -2,10 +2,10 @@ import Profile from '../Profile';
 import ChatList from '../ChatList';
 import Options from '../Options';
 
-function index(props) {
+function Navbar(props) {
   return (
-    <div className='nav-container'>
-      <div className='nav-top'>
+    <div className="nav-container">
+      <div className="nav-top">
         <h1>Chatter</h1>
         <h1>logo here</h1>
       </div>
@@ -16,4 +16,4 @@ function index(props) {
   );
 }
 
-export default index;
+export default Navbar;
