@@ -1,6 +1,9 @@
+import { useState } from 'react';
+
+import { useAuthState } from '../../Context';
+
 import Chat from './Chat';
 import MessageBox from './MessageBox';
-import { useState } from 'react';
 
 function ChatArea() {
   const [chatRooms, setChatRooms] = useState([
@@ -9,17 +12,26 @@ function ChatArea() {
       chat_room_group_id: 'test',
     },
   ]);
+  const [messages, setMessages] = useState([]);
+
+  const state = useAuthState();
 
   const chatSocket = new WebSocket(
     process.env.REACT_APP_WS_URL + chatRooms[0].chat_room_group_id + '/'
   );
 
+  chatSocket.onopen = function (event) {
+    chatSocket.send(
+      JSON.stringify({ type: 'user_info', data: state.username })
+    );
+  };
+
   chatSocket.onmessage = function (e) {
     console.log('<<<<< On Message >>>>>');
     console.log(e);
     const data = JSON.parse(e.data);
-    document.querySelector('#chat-text-area').textContent +=
-      data.message + '\n';
+    console.log(data);
+    // setMessages([...messages, data])
   };
 
   chatSocket.onclose = function (e) {
@@ -32,7 +44,7 @@ function ChatArea() {
         <h3>prof img</h3>
         <h3>Victor W.</h3>
       </div>
-      <Chat />
+      <Chat messages={messages} user={state.username} />
       <MessageBox chatSocket={chatSocket} />
     </div>
   );

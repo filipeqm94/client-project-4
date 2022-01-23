@@ -11,22 +11,25 @@ function MessageBox({ chatSocket }) {
 
     chatSocket.send(
       JSON.stringify({
+        type: 'chat_message',
         message: chatMessage,
+        user_one: 'jeremy',
+        user_two: 'thaddeus',
       })
     );
   };
 
   return (
-    <div className='msg-box-container'>
-      <div className='msg-box-form'>
-        <p id='chat-text-area'></p>
+    <div className="msg-box-container">
+      <div className="msg-box-form">
+        <p id="chat-text-area"></p>
         <form>
           <input
-            className='msg-body'
-            placeholder='Message Victor W.'
+            className="msg-body"
+            placeholder="Message Victor W."
             onChange={changeHandler}
           />
-          <button type='submit' value='Send' onClick={submitHandler}>
+          <button type="submit" value="Send" onClick={submitHandler}>
             Submit
           </button>
         </form>
