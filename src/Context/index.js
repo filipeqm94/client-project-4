@@ -1,11 +1,8 @@
 import {
-  loginUser,
+  login,
   logout,
-  getUserChatList,
-  updateUserChatList,
-  getChatMessages,
-  createMessage,
+  signup,
 } from './actions';
 import { AuthProvider, useAuthDispatch, useAuthState } from './context';
 
-export { AuthProvider, useAuthState, useAuthDispatch, loginUser, logout };
+export { AuthProvider, useAuthState, useAuthDispatch, login, logout, signup };

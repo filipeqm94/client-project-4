@@ -1,7 +1,16 @@
-function Chat() {
+import './styles.css'
+
+function Chat({ messages, user }) {
   return (
     <div className="chat-msg-container">
-      <p className="chat-msg">What a great app! I'm glad I signed up!</p>
+      {messages.map((message) => {
+        return (
+          <div className={user === message.user ? "sender" : "receiver"}>
+            <h3>{message.user}:</h3>
+            <p>{message.message}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }

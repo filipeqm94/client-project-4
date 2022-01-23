@@ -1,0 +1,11 @@
+.sender {
+    text-align: end;
+
+    background-color: darkblue;
+    color: #eee;
+}
+
+.receiver {
+    background-color: darkgreen;
+    color: #eee;
+}

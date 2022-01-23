@@ -2,7 +2,7 @@ import Profile from '../Profile';
 import ChatList from '../ChatList';
 import Options from '../Options';
 
-function Navbar(props) {
+function Navbar() {
   return (
     <div className="nav-container">
       <div className="nav-top">
