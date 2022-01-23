@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { AuthReducer, userInitialState } from './reducer';
+import { AuthReducer, initialState } from './reducer';
 
 const AuthStateContext = React.createContext();
 const AuthDispatchContext = React.createContext();
@@ -23,7 +23,7 @@ export function useAuthDispatch() {
 }
 
 export const AuthProvider = ({ children }) => {
-  const [user, dispatch] = useReducer(AuthReducer, userInitialState);
+  const [user, dispatch] = useReducer(AuthReducer, initialState);
 
   return (
     <AuthStateContext.Provider value={user}>
