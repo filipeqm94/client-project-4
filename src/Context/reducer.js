@@ -3,25 +3,26 @@ let user = localStorage.getItem('current_user')
   : '';
 
 // initial state tree
-export const userInitialState = {
+export const initialState = {
   ...user,
-  loading: true,
+  loading: false,
+  errorMessage: ""
 };
 
-export const AuthReducer = (state = userInitialState, action) => {
+export const AuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'REQUEST_LOGIN':
-      console.log('Request sent');
       return {
         ...state,
         loading: true,
+        errorMessage: "",
       };
     case 'LOGIN_SUCCESS':
-      console.log('<<<<< Success Login >>>>');
       return {
         ...state,
-        user: action.payload.user,
+        user: action.payload,
         loading: false,
+        errorMessage: "",
       };
     case 'LOG_OUT':
       return {
@@ -30,7 +31,6 @@ export const AuthReducer = (state = userInitialState, action) => {
         token: '',
       };
     case 'LOGIN_ERROR':
-      console.log('<<<<< Error Login >>>>>');
       return {
         ...state,
         loading: false,
