@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { useAuthState, useAuthDispatch } from '../../Context/context';
 import { loginUser } from '../../Context';
-import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
 
   const dispatch = useAuthDispatch();
   const { loading, errorMessage } = useAuthState();
-
-  let navigate = useNavigate();
 
   async function handleLogin(ev) {
     ev.preventDefault();
@@ -21,13 +18,14 @@ function Login(props) {
 
   async function handleSubmit(ev) {
     ev.preventDefault();
-    loginUser(dispatch, loginForm)
+    loginUser(dispatch, loginForm);
   }
 
   return (
     <div>
       Login
       {loading ? <p>Loading</p> : null}
+      <p>{errorMessage ? errorMessage : null}</p>
       <form onSubmit={handleSubmit}>
         <label>
           Username:
