@@ -1,7 +1,8 @@
+import { SEND_REQUEST, LOGIN, LOGOUT, LOGIN_ERROR } from './reducerActions';
 import axiosInstance from './axios';
 
-export const loginUser = async (dispatch, payload) => {
-  dispatch({ type: 'REQUEST_LOGIN' });
+export const login = async (dispatch, payload) => {
+  dispatch({ type: SEND_REQUEST });
   axiosInstance
     .post('login/', payload)
     .then((res) => {
@@ -17,17 +18,26 @@ export const loginUser = async (dispatch, payload) => {
       localStorage.setItem('current_user', JSON.stringify(user));
       localStorage.setItem('access_token', access);
       localStorage.setItem('refresh_token', refresh);
-      dispatch({ type: 'LOGIN_SUCCESS', payload: user });
-      window.location.href = '/'
+      dispatch({ type: LOGIN, payload: user });
+      window.location.href = '/';
     })
     .catch((error) => {
-      dispatch({ type: 'LOGIN_ERROR', error: error.response.data.detail });
+      dispatch({ type: LOGIN_ERROR, error: error.response.data.detail });
     });
 };
 
 export const logout = async (dispatch) => {
-  dispatch({ type: 'LOGOUT' });
+  dispatch({ type: LOGOUT });
   localStorage.removeItem('currentUser');
   localStorage.removeItem('access_token');
   localStorage.removeItem('refresh_token');
+  window.location.href = '/login'
+};
+
+export const signup = async (dispatch, payload) => {
+  dispatch({ type: SEND_REQUEST });
+  axiosInstance
+    .post('signup/', payload)
+    .then((res) => console.log(res))
+    .catch((error) => console.log(error.response));
 };

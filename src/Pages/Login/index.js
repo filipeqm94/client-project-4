@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuthState, useAuthDispatch } from '../../Context/context';
-import { loginUser } from '../../Context';
+import { login } from '../../Context';
 
 function Login(props) {
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
@@ -18,7 +19,7 @@ function Login(props) {
 
   async function handleSubmit(ev) {
     ev.preventDefault();
-    loginUser(dispatch, loginForm);
+    login(dispatch, loginForm);
   }
 
   return (
@@ -47,6 +48,9 @@ function Login(props) {
         </label>
         <input type="submit" value="Submit" />
       </form>
+      <p>
+        Don't have an account? <Link to="/signup">Sign Up</Link>
+      </p>
     </div>
   );
 }
