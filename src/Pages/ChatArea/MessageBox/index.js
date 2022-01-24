@@ -27,11 +27,9 @@ function MessageBox({ chatSocket, setMessages }) {
       <div className="msg-box-form">
         <p id="chat-text-area"></p>
         <form>
-          <input
-            className="msg-body"
-            placeholder="Message Victor W."
-            onChange={changeHandler}
-          />
+          <textarea onChange={changeHandler} className='message-box'>
+
+          </textarea>
           <button type="submit" value="Send" onClick={submitHandler}>
             Submit
           </button>

@@ -1,4 +1,10 @@
 /* START -- FOR DESIGN AND TESTING */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .main > * {
   border: 1px solid white;
 }
@@ -35,7 +41,7 @@ body {
 
 /* START -- NAV, CHAT LIST, OPTIONS
 LEFT SIDE */
-.nav-container {
+/* .nav-container {
   grid-column: 1;
   display: grid;
   grid-template-rows: 1fr 2fr 5fr 1fr;
@@ -56,34 +62,42 @@ LEFT SIDE */
 
 .options-container {
   grid-row: 4;
-}
+} */
 /* END -- NAV, CHAT LIST, OPTIONS
 LEFT SIDE */
 
 /* START -- CHAT AREA, CHAT, MESSAGEBOX */
 .chat-area-container {
-  grid-column: 2;
-  display: grid;
-  grid-template-rows: 1fr 4fr 1fr;
-}
-
-.chat-area-info {
-  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
 }
 
 .chat-msg-container {
-  grid-row: 2;
+  height: 100vh;
 }
 
 .msg-box-container {
-  grid-row: 3;
+  margin-top: auto;
+  height: 25%;
 }
+
+.message-box {
+  width: 100%;
+}
+
+.message {
+  margin-top: 10px;
+}
+
 /* END -- CHAT AREA, CHAT, MESSAGEBOX */
 
 /* START -- SIDEBAR */
 .sidebar-container {
-  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  /* grid-column: 3;
   display: grid;
-  grid-template-rows: 1fr 2fr 5fr 1fr;
+  grid-template-rows: 1fr 2fr 5fr 1fr; */
 }
 /* END -- SIDEBAR */

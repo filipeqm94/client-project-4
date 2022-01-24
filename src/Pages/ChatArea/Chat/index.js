@@ -6,7 +6,7 @@ function Chat({ messages, user, id }) {
       {messages ? messages.map((message, index) => {
         return (
           <div
-            className={id === message.sender ? 'sender' : 'receiver'}
+            className={`message ${id === message.sender ? 'sender' : 'receiver'}`}
             key={index}
           >
             <h3>{message.user}:</h3>
