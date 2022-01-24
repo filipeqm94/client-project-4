@@ -9,7 +9,6 @@ function ChatArea({ chatSocket }) {
   const [messages, setMessages] = useState([]);
 
   const { username } = useAuthState();
-  console.log('chat area --->', chatSocket);
 
   return (
     <div className="chat-area-container">
