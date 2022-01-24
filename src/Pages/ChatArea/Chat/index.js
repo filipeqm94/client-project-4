@@ -3,7 +3,7 @@ import './styles.css';
 function Chat({ messages, user, id }) {
   return (
     <div className="chat-msg-container">
-      {messages.map((message, index) => {
+      {messages ? messages.map((message, index) => {
         return (
           <div
             className={id === message.sender ? 'sender' : 'receiver'}
@@ -13,7 +13,7 @@ function Chat({ messages, user, id }) {
             <p>{message.message}</p>
           </div>
         );
-      })}
+      }) : null}
     </div>
   );
 }

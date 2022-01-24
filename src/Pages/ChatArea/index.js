@@ -6,8 +6,7 @@ import axiosInstance from '../../Context/axios';
 import Chat from './Chat';
 import MessageBox from './MessageBox';
 
-function ChatArea({ chatSocket, chatRoom }) {
-  const [messages, setMessages] = useState([]);
+function ChatArea({ chatSocket, chatRoom, messages, setMessages }) {
 
   const { username, user_id } = useAuthState();
 
@@ -15,7 +14,7 @@ function ChatArea({ chatSocket, chatRoom }) {
     if (chatRoom) {
       axiosInstance
         .get(`/getmessages/${chatRoom}/`)
-        .then((res) => setMessages(res.data))
+        .then((res) => setMessages(res.data.reverse()))
         .catch((error) => console.log(error));
     }
   }, [chatRoom]);
@@ -27,7 +26,7 @@ function ChatArea({ chatSocket, chatRoom }) {
         <h3>Victor W.</h3>
       </div>
       <Chat messages={messages} user={username} id={user_id} />
-      <MessageBox chatSocket={chatSocket} />
+      <MessageBox chatSocket={chatSocket} setMessages={setMessages}/>
     </div>
   );
 }

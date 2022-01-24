@@ -13,20 +13,20 @@ function App() {
 
   const dispatch = useAuthDispatch()
 
-  // useEffect(() => {
-  //   axiosInstance
-  //     .get('test/')
-  //     .then((res) => {
-  //       if ('response' in res) throw res;
-  //       console.log('<<<<< Auth Success >>>>>');
-  //       setUsersList(dispatch, res.data)
-  //     })
-  //     .catch((error) => {
-  //       console.log('<<<<< Auth Error >>>>>');
-  //       localStorage.clear();
-  //       navigate('/login');
-  //     });
-  // }, [navigate]);
+  useEffect(() => {
+    axiosInstance
+      .get('test/')
+      .then((res) => {
+        if ('response' in res) throw res;
+        console.log('<<<<< Auth Success >>>>>');
+        setUsersList(dispatch, res.data)
+      })
+      .catch((error) => {
+        console.log('<<<<< Auth Error >>>>>');
+        localStorage.clear();
+        navigate('/login');
+      });
+  }, [navigate]);
 
   return (
     <>
