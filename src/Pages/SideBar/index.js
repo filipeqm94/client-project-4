@@ -10,14 +10,21 @@ function SideBar({ setChatSocket, chatSocket }) {
     }
 
     // formulate room name
-    const chat_room_name = [username, targetUser].sort().join('_');
+    const chatRoomName = [username, targetUser].sort().join('_');
+    const usernames = chatRoomName.split('_');
     const newChatSocket = new WebSocket(
-      process.env.REACT_APP_WS_URL + chat_room_name + '/'
+      process.env.REACT_APP_WS_URL + chatRoomName + '/'
     );
 
     setChatSocket(newChatSocket);
     newChatSocket.addEventListener('open', (event) => {
-      newChatSocket.send(JSON.stringify({ type: 'open_chat' }));
+      newChatSocket.send(
+        JSON.stringify({
+          type: 'open_chat',
+          user_one: usernames[0],
+          user_two: usernames[1],
+        })
+      );
     });
   }
 
