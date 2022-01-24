@@ -6,7 +6,6 @@ function SideBar({ setChatSocket, chatSocket }) {
   function handleClick(targetUser) {
     // if there is an existing socket, close it
     if (chatSocket) {
-      console.log('closing socket ---->', chatSocket);
       chatSocket.close();
     }
 
