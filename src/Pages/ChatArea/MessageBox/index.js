@@ -1,7 +1,10 @@
 import { useState } from 'react';
 
+import {useAuthState} from "../../../Context/context"
+
 function MessageBox({ chatSocket }) {
   const [chatMessage, setChatMessage] = useState('');
+  const {username} = useAuthState()
 
   const changeHandler = (ev) => {
     setChatMessage(ev.target.value);
@@ -14,7 +17,7 @@ function MessageBox({ chatSocket }) {
       JSON.stringify({
         type: 'chat_message',
         message: chatMessage,
-        user_one: 'test123',
+        sender: username,
       })
     );
   };

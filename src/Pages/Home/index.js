@@ -6,6 +6,12 @@ import { useState } from 'react';
 
 function Home() {
   const [chatSocket, setChatSocket] = useState();
+
+  if (chatSocket !== undefined) {
+    chatSocket.onmessage = function (e) {
+      console.log(e);
+    };
+  }
   return (
     <div className="main">
       <Navbar />
