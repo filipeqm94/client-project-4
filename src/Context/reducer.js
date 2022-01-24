@@ -1,4 +1,10 @@
-import {SEND_REQUEST, LOGIN, LOGIN_ERROR, LOGOUT} from "./reducerActions"
+import {
+  SEND_REQUEST,
+  LOGIN,
+  LOGIN_ERROR,
+  LOGOUT,
+  SET_USERS,
+} from './reducerActions';
 
 let user = localStorage.getItem('current_user')
   ? JSON.parse(localStorage.getItem('current_user'))
@@ -8,7 +14,9 @@ let user = localStorage.getItem('current_user')
 export const initialState = {
   ...user,
   loading: false,
-  errorMessage: ""
+  errorMessage: '',
+  usersList: [],
+  chatSocket: '',
 };
 
 export const AuthReducer = (state = initialState, action) => {
@@ -17,14 +25,14 @@ export const AuthReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        errorMessage: "",
+        errorMessage: '',
       };
     case LOGIN:
       return {
         ...state,
         user: action.payload,
         loading: false,
-        errorMessage: "",
+        errorMessage: '',
       };
     case LOGOUT:
       return {
@@ -37,6 +45,16 @@ export const AuthReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         errorMessage: action.error,
+      };
+    case SET_USERS:
+      return {
+        ...state,
+        usersList: action.payload,
+      };
+    case 'SET_SOCKET':
+      return {
+        ...state,
+        chatSocket: action.payload,
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

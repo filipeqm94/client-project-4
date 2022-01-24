@@ -1,4 +1,10 @@
-import { SEND_REQUEST, LOGIN, LOGOUT, LOGIN_ERROR } from './reducerActions';
+import {
+  SEND_REQUEST,
+  LOGIN,
+  LOGOUT,
+  LOGIN_ERROR,
+  SET_USERS,
+} from './reducerActions';
 import axiosInstance from './axios';
 
 export const login = async (dispatch, payload) => {
@@ -31,13 +37,20 @@ export const logout = async (dispatch) => {
   localStorage.removeItem('currentUser');
   localStorage.removeItem('access_token');
   localStorage.removeItem('refresh_token');
-  window.location.href = '/login'
+  window.location.href = '/login';
 };
 
 export const signup = async (dispatch, payload) => {
-  dispatch({ type: SEND_REQUEST });
   axiosInstance
     .post('signup/', payload)
     .then((res) => console.log(res))
     .catch((error) => console.log(error.response));
 };
+
+export const setUsersList = async (dispatch, payload) => {
+  dispatch({ type: SET_USERS, payload });
+};
+
+export const setSocket = async (dispatch, payload) => {
+  dispatch({type: "SET_SOCKET", payload})
+}

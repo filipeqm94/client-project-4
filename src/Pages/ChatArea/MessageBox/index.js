@@ -6,6 +6,7 @@ function MessageBox({ chatSocket }) {
   const changeHandler = (ev) => {
     setChatMessage(ev.target.value);
   };
+
   const submitHandler = (ev) => {
     ev.preventDefault();
 
