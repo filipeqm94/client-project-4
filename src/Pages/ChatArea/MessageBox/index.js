@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import {useAuthState} from "../../../Context/context"
 
-function MessageBox({ chatSocket }) {
+function MessageBox({ chatSocket, setMessages }) {
   const [chatMessage, setChatMessage] = useState('');
   const {username} = useAuthState()
 
