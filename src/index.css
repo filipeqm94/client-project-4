@@ -75,6 +75,7 @@ LEFT SIDE */
 
 .chat-msg-container {
   height: 100vh;
+  overflow: scroll;
 }
 
 .msg-box-container {
