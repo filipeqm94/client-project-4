@@ -2,20 +2,24 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 //local
-import { AuthProvider } from './Context';
 import axiosInstance from './Context/axios';
+import { useAuthDispatch } from './Context';
+import { setUsersList } from './Context/actions';
 //components
 import AppRoute from './Components/AppRoute';
 
 function App() {
   const navigate = useNavigate();
+
+  const dispatch = useAuthDispatch()
+
   useEffect(() => {
     axiosInstance
       .get('test/')
       .then((res) => {
         if ('response' in res) throw res;
         console.log('<<<<< Auth Success >>>>>');
-        console.log(res);
+        setUsersList(dispatch, res.data)
       })
       .catch((error) => {
         console.log('<<<<< Auth Error >>>>>');
@@ -25,9 +29,9 @@ function App() {
   }, [navigate]);
 
   return (
-    <AuthProvider>
+    <>
       <AppRoute />
-    </AuthProvider>
+    </>
   );
 }
 
