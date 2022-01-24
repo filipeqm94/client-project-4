@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 function Home() {
   const [chatSocket, setChatSocket] = useState();
+  const [chatRoom, setChatRoom] = useState('');
 
   if (chatSocket !== undefined) {
     chatSocket.onmessage = function (e) {
@@ -15,8 +16,16 @@ function Home() {
   return (
     <div className="main">
       <Navbar />
-      <ChatArea chatSocket={chatSocket} setChatSocket={setChatSocket} />
-      <SideBar chatSocket={chatSocket} setChatSocket={setChatSocket} />
+      <ChatArea
+        chatSocket={chatSocket}
+        setChatSocket={setChatSocket}
+        chatRoom={chatRoom}
+      />
+      <SideBar
+        chatSocket={chatSocket}
+        setChatSocket={setChatSocket}
+        setChatRoom={setChatRoom}
+      />
     </div>
   );
 }

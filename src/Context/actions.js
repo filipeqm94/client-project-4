@@ -13,13 +13,13 @@ export const login = async (dispatch, payload) => {
     .post('login/', payload)
     .then((res) => {
       const { access, refresh } = res.data;
-      const { username, primary_language, learning_language } = JSON.parse(
-        atob(refresh.split('.')[1])
-      );
+      const { username, primary_language, learning_language, user_id } =
+        JSON.parse(atob(refresh.split('.')[1]));
       const user = {
         username,
         primary_language,
         learning_language,
+        user_id,
       };
       localStorage.setItem('current_user', JSON.stringify(user));
       localStorage.setItem('access_token', access);
@@ -52,5 +52,5 @@ export const setUsersList = async (dispatch, payload) => {
 };
 
 export const setSocket = async (dispatch, payload) => {
-  dispatch({type: "SET_SOCKET", payload})
-}
+  dispatch({ type: 'SET_SOCKET', payload });
+};

@@ -1,6 +1,6 @@
 import { useAuthState } from '../../Context/context';
 
-function SideBar({ setChatSocket, chatSocket }) {
+function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
   const { username, usersList } = useAuthState();
 
   function handleClick(targetUser) {
@@ -11,6 +11,7 @@ function SideBar({ setChatSocket, chatSocket }) {
 
     // formulate room name
     const chatRoomName = [username, targetUser].sort().join('_');
+    setChatRoom(chatRoomName)
     const usernames = chatRoomName.split('_');
     const newChatSocket = new WebSocket(
       process.env.REACT_APP_WS_URL + chatRoomName + '/'
