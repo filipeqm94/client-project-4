@@ -5,12 +5,11 @@ import { useAuthState } from '../../Context';
 import Chat from './Chat';
 import MessageBox from './MessageBox';
 
-function ChatArea() {
+function ChatArea({ chatSocket }) {
   const [messages, setMessages] = useState([]);
 
-  const { username, chatSocket } = useAuthState();
-  console.log("chat area --->",chatSocket)
-  
+  const { username } = useAuthState();
+  console.log('chat area --->', chatSocket);
 
   return (
     <div className="chat-area-container">
