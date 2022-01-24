@@ -15,6 +15,7 @@ function App() {
       .then((res) => {
         if ('response' in res) throw res;
         console.log('<<<<< Auth Success >>>>>');
+        console.log(res);
       })
       .catch((error) => {
         console.log('<<<<< Auth Error >>>>>');

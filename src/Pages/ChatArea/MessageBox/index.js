@@ -13,8 +13,7 @@ function MessageBox({ chatSocket }) {
       JSON.stringify({
         type: 'chat_message',
         message: chatMessage,
-        user_one: 'jeremy',
-        user_two: 'thaddeus',
+        user_one: 'test123',
       })
     );
   };
