@@ -23,10 +23,7 @@ function ChatArea() {
   chatSocket.onopen = function (event) {
     chatSocket.send(
       JSON.stringify({
-        type: 'user_info',
-        message: "whooot",
-        user_one: 'admin',
-        user_two: 'username',
+        type: 'open_chat',
       })
     );
   };
