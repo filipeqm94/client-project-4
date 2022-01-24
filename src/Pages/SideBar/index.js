@@ -1,7 +1,29 @@
-import { useAuthState } from '../../Context/context';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { useAuthState, useAuthDispatch } from '../../Context/context';
+import axiosInstance from '../../Context/axios';
+import { setUsersList } from '../../Context/actions';
 
 function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
   const { username, usersList } = useAuthState();
+  const dispatch = useAuthDispatch()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    axiosInstance
+      .get('test/')
+      .then((res) => {
+        if ('response' in res) throw res;
+        console.log('<<<<< Auth Success >>>>>');
+        setUsersList(dispatch, res.data)
+      })
+      .catch((error) => {
+        console.log('<<<<< Auth Error >>>>>');
+        localStorage.clear();
+        navigate('/login');
+      });
+  }, []);
 
   function handleClick(targetUser) {
     // if there is an existing socket, close it
