@@ -1,15 +1,14 @@
 import './styles.css';
 
-function Chat({ messages, user, id }) {
+function Chat({ messages, id }) {
   return (
     <div className="chat-msg-container">
       {messages ? messages.map((message, index) => {
         return (
           <div
-            className={id === message.sender ? 'sender' : 'receiver'}
+            className={`message ${id === message.sender ? 'sender' : 'receiver'}`}
             key={index}
           >
-            <h3>{message.user}:</h3>
             <p>{message.message}</p>
           </div>
         );
