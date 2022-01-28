@@ -6,20 +6,18 @@ import axiosInstance from '../../Context/axios';
 import { setUsersList } from '../../Context/actions';
 
 function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
-  const { username, usersList } = useAuthState();
+  const { username, usersList, primary_language, learning_language } = useAuthState();
   const dispatch = useAuthDispatch()
   const navigate = useNavigate()
 
   useEffect(() => {
     axiosInstance
-      .get('test/')
+      .get(`getusers/?primary_language=${primary_language}&learning_language=${learning_language}`)
       .then((res) => {
         if ('response' in res) throw res;
-        console.log('<<<<< Auth Success >>>>>');
         setUsersList(dispatch, res.data)
       })
-      .catch((error) => {
-        console.log('<<<<< Auth Error >>>>>');
+      .catch(() => {
         localStorage.clear();
         navigate('/login');
       });
