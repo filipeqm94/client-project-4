@@ -1,14 +1,20 @@
+import maleIcon from '../../assets/images/male.png';
+
 function ChatList() {
   return (
     <div className="chatlist-container">
       <div className="chat-group">
         {/* ex: friends (saved users), active chats */}
-        <h3>Active</h3>
+        <h3>Active Chats</h3>
         <div className="chat-preview">
-          <h3>users avatars</h3>
-          <h3>Victor</h3>
-          {/* chat preview - truncated */}
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+          <div className="user-img-holder">
+            <img src={maleIcon} alt="user icon" />
+          </div>
+          <div className="chat-info">
+            <h6>Victor W.</h6>
+            {/* chat preview - truncated */}
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+          </div>
         </div>
       </div>
     </div>
