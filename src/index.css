@@ -143,6 +143,11 @@ LEFT SIDE */
 .options-container {
   grid-row: 4;
   border-top: 4px solid #2b2039;
+  padding-left: 15px;
+}
+
+.options-container h4 {
+  margin-top: 10px;
 }
 
 .options-container button {
@@ -154,6 +159,7 @@ LEFT SIDE */
   border-radius: 15px;
   width: 80px;
   height: 25px;
+  margin-top: 20px;
 }
 /* END -- NAV, CHAT LIST, OPTIONS
 LEFT SIDE */
@@ -163,6 +169,16 @@ LEFT SIDE */
   display: flex;
   flex-direction: column;
   max-height: 100vh;
+}
+
+.chat-area-info {
+  display: flex;
+  padding: 15px;
+}
+
+.chat-area-info h3 {
+  margin-top: 15px;
+  margin-left: 25px;
 }
 
 .chat-msg-container {

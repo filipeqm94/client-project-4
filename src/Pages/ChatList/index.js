@@ -1,4 +1,5 @@
 import maleIcon from '../../assets/images/male.png';
+import femaleIcon from '../../assets/images/female.png';
 
 function ChatList() {
   return (
@@ -26,6 +27,16 @@ function ChatList() {
           </div>
           <div className="chat-info">
             <h3 className="chat-info-name">Filipe M.</h3>
+            {/* chat preview - truncated */}
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <div className="chat-preview">
+          <div className="user-img-holder">
+            <img src={femaleIcon} alt="user icon" />
+          </div>
+          <div className="chat-info">
+            <h3 className="chat-info-name">Anne B.</h3>
             {/* chat preview - truncated */}
             <p>Lorem ipsum dolor sit amet.</p>
           </div>
