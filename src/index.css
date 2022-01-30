@@ -6,11 +6,11 @@
 }
 
 .main > * {
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .nav-container > * {
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .chat-area-container > * {
@@ -87,15 +87,36 @@ LEFT SIDE */
   margin-top: 20px;
 }
 
+.chat-group h3 {
+  margin-bottom: 20px;
+}
+
+.chat-group button {
+  background-color: rgba(112, 161, 255, 0.2);
+  color: #1e90ff;
+  width: 60px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+.chat-preview {
+  margin-bottom: 20px;
+  display: flex;
+}
+
 .user-img-holder {
-  background: #747d8c;
+  background: #ced6e0;
   width: 55px;
   height: 55px;
   border-radius: 15px;
 }
 
 .user-img-holder img {
-  width: 50px;
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 5px;
 }
 
 .options-container {

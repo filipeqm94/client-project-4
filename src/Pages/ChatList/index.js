@@ -5,7 +5,9 @@ function ChatList() {
     <div className="chatlist-container">
       <div className="chat-group">
         {/* ex: friends (saved users), active chats */}
-        <h3>Active Chats</h3>
+        <h3>Chats</h3>
+        <button className="active-group-btn">active</button>
+        <button className="closed-group-btn">closed</button>
         <div className="chat-preview">
           <div className="user-img-holder">
             <img src={maleIcon} alt="user icon" />
