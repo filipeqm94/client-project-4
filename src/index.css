@@ -37,15 +37,24 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
+  background-color: #120e17;
+  background-image: linear-gradient(180deg, #120e17 0%, #181329 80%);
 }
 
 /* START -- NAV, CHAT LIST, OPTIONS
 LEFT SIDE */
-/* .nav-container {
+.nav-container {
   grid-column: 1;
   display: grid;
   grid-template-rows: 1fr 2fr 5fr 1fr;
   height: inherit;
+}
+
+#logo {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .nav-top {
@@ -62,7 +71,7 @@ LEFT SIDE */
 
 .options-container {
   grid-row: 4;
-} */
+}
 /* END -- NAV, CHAT LIST, OPTIONS
 LEFT SIDE */
 

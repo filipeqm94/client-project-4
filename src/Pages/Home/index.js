@@ -7,12 +7,12 @@ import { useState } from 'react';
 function Home() {
   const [chatSocket, setChatSocket] = useState();
   const [chatRoom, setChatRoom] = useState('');
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([]);
 
   if (chatSocket !== undefined) {
     chatSocket.onmessage = function (e) {
       const data = JSON.parse(e.data);
-      setMessages((prevMessages => [...prevMessages, data]))
+      setMessages((prevMessages) => [...prevMessages, data]);
     };
   }
 
