@@ -185,6 +185,9 @@ LEFT SIDE */
 .chat-msg-container {
   height: 100vh;
   overflow: scroll;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
 }
 
 .msg-box-container {
