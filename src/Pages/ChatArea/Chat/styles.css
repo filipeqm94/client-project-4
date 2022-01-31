@@ -1,11 +1,26 @@
 .sender {
-    text-align: end;
+  text-align: end;
+  background-color: #4d38a2;
+  /* width: 50%; */
+  padding: 10px;
+  color: #eee;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  grid-column: 2;
+}
 
-    background-color: darkblue;
-    color: #eee;
+.sender p {
+  height: 50px;
+  width: 150px;
+  overflow: hidden;
 }
 
 .receiver {
-    background-color: darkgreen;
-    color: #eee;
+  background-color: #19182b;
+  color: #eee;
+  /* width: 50%; */
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  grid-column: 1;
 }

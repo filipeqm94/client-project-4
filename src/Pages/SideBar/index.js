@@ -6,16 +6,19 @@ import axiosInstance from '../../Context/axios';
 import { setUsersList } from '../../Context/actions';
 
 function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
-  const { username, usersList, primary_language, learning_language } = useAuthState();
-  const dispatch = useAuthDispatch()
-  const navigate = useNavigate()
+  const { username, usersList, primary_language, learning_language } =
+    useAuthState();
+  const dispatch = useAuthDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axiosInstance
-      .get(`getusers/?primary_language=${primary_language}&learning_language=${learning_language}`)
+      .get(
+        `getusers/?primary_language=${primary_language}&learning_language=${learning_language}`
+      )
       .then((res) => {
         if ('response' in res) throw res;
-        setUsersList(dispatch, res.data)
+        setUsersList(dispatch, res.data);
       })
       .catch(() => {
         localStorage.clear();
@@ -31,7 +34,7 @@ function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
 
     // formulate room name
     const chatRoomName = [username, targetUser].sort().join('_');
-    setChatRoom(chatRoomName)
+    setChatRoom(chatRoomName);
     const usernames = chatRoomName.split('_');
     const newChatSocket = new WebSocket(
       process.env.REACT_APP_WS_URL + chatRoomName + '/'
@@ -51,11 +54,18 @@ function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
 
   return (
     <div className="sidebar-container">
-      {usersList.map(({ username }) => (
-        <button key={username} onClick={() => handleClick(username)}>
-          {username}
-        </button>
-      ))}
+      <h3>All Chatters</h3>
+      <div>
+        {usersList.map(({ username }) => (
+          <button
+            className="sidebar-users"
+            key={username}
+            onClick={() => handleClick(username)}
+          >
+            {username}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
