@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 import { AuthProvider } from './Context';
 
-import './index.css';
+import './index.scss';
 
 import App from './App';
 

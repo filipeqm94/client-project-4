@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useAuthDispatch } from '../../Context';
 import { signup } from '../../Context';
 
-import './styles.css';
+import './styles.scss';
 
 function SignUp() {
   const [signupForm, setSignupForm] = useState({
