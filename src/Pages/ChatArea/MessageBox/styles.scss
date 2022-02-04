@@ -1,0 +1,38 @@
+.msg-box-container {
+  margin-top: auto;
+  height: 25%;
+}
+
+.msg-box-container textarea {
+  background: none;
+  border: 4px solid #2b2039;
+  border-radius: 15px;
+  height: 50px;
+  width: 85%;
+  margin-left: 15px;
+  color: white;
+  font-size: 18px;
+}
+
+.msg-box-form form {
+  display: flex;
+}
+
+.msg-box-container button {
+  background: none;
+  border: none;
+  display: block;
+  margin-left: 15px;
+}
+
+.msg-box-container img {
+  width: 30px;
+}
+
+.message-box {
+  width: 100%;
+}
+
+.message {
+  margin-top: 10px;
+}

@@ -1,0 +1,32 @@
+.chat-area-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  border-right: 4px solid #2b2039;
+  border-left: 4px solid #2b2039;
+}
+
+.chat-area-info {
+  display: flex;
+  padding: 15px;
+}
+
+.chat-area-info h3 {
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+.user-img-holder {
+  background: #ced6e0;
+  min-width: 55px;
+  height: 55px;
+  border-radius: 15px;
+}
+
+.user-img-holder img {
+  min-width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 5px;
+}

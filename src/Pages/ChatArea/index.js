@@ -1,3 +1,4 @@
+import './styles.scss';
 import { useEffect, useState } from 'react';
 import { useAuthState } from '../../Context';
 import axiosInstance from '../../Context/axios';

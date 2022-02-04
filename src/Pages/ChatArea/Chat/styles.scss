@@ -1,3 +1,11 @@
+.chat-msg-container {
+  height: 100vh;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+}
+
 .sender {
   text-align: end;
   background-color: #4d38a2;
