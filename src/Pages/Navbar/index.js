@@ -11,7 +11,7 @@ function Navbar() {
         <img id="logo" src={chatterLogo} alt="chatter logo" />
       </div>
       <Profile />
-      <ChatList />
+      {/* <ChatList /> */}
       <Options />
     </div>
   );
