@@ -37,33 +37,6 @@ body {
 
 /* START -- NAV, CHAT LIST, OPTIONS
 LEFT SIDE */
-.nav-container {
-  grid-column: 1;
-  display: grid;
-  grid-template-rows: 1fr 2fr 5fr 1fr;
-  height: inherit;
-}
-
-#logo {
-  width: 150px;
-  display: block;
-  /* margin: 0 auto; */
-  margin-top: 25px;
-  padding-left: 15px;
-}
-
-.prof-top {
-  padding-left: 15px;
-}
-
-#username {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.prof-info > * {
-  margin-bottom: 10px;
-}
 
 .nav-top {
   grid-row: 1;
