@@ -65,6 +65,28 @@
   }
 }
 
+.sign-up-area {
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  a {
+    display: block;
+    margin-top: 15px;
+    width: 100%;
+    text-decoration: none;
+    background-color: #2b2039;
+    height: 35px;
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  h3 {
+    color: #ffdd59;
+    padding-top: 5px;
+  }
+}
+
 .content-side {
   grid-column: 2;
 }

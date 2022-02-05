@@ -60,7 +60,10 @@ function Login(props) {
         </div>
         <div className="sign-up-area">
           <p>
-            Don't have an account? <Link to="/signup">Sign Up</Link>
+            New to Chatter?{' '}
+            <Link to="/signup">
+              <h3>Create an account</h3>
+            </Link>
           </p>
         </div>
       </div>
