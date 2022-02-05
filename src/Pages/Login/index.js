@@ -74,8 +74,8 @@ function Login(props) {
       </div>
       <div className="content-side">
         <div className="screen-shot-area">
-          <img src={userIcon} id="screen-shot-user" />
-          <img src={screenShot} id="screen-shot" />
+          <img src={userIcon} alt="Chtter user preview" id="screen-shot-user" />
+          <img src={screenShot} alt="Chtter chat preview" id="screen-shot" />
         </div>
         <footer>
           <div>
