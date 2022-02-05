@@ -1,11 +1,12 @@
 import './styles.scss';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import { useAuthState, useAuthDispatch } from '../../Context/context';
 import { login } from '../../Context';
-
+import SignUp from '../SignUp/index';
 import screenShot from '../../assets/images/screenshot-1.png';
 import userIcon from '../../assets/images/user.png';
+import ghLogo from '../../assets/images/gh-logo.png';
 
 function Login(props) {
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
@@ -65,6 +66,9 @@ function Login(props) {
             <Link to="/signup">
               <h3>Create an account</h3>
             </Link>
+            <Routes>
+              <Route path="/signup" element={SignUp}></Route>
+            </Routes>
           </p>
         </div>
       </div>
@@ -73,6 +77,17 @@ function Login(props) {
           <img src={userIcon} id="screen-shot-user" />
           <img src={screenShot} id="screen-shot" />
         </div>
+        <footer>
+          <div>
+            <a
+              href="https://github.com/filipeqm94/client-project-4"
+              target="_blank"
+            >
+              <img src={ghLogo} />
+              <h4>source code</h4>
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
   );

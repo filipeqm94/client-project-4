@@ -89,6 +89,34 @@
 
 .content-side {
   grid-column: 2;
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 50vw;
+    padding-bottom: 10px;
+
+    div {
+      width: 100px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 22px;
+    }
+
+    a {
+      display: flex;
+      text-decoration: none;
+      font-size: 12px;
+      align-items: center;
+    }
+
+    h4 {
+      color: white;
+      margin-left: 4px;
+    }
+  }
 }
 
 #screen-shot-user {
