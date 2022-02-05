@@ -1,6 +1,6 @@
 .msg-box-container {
-  margin-top: auto;
   height: 25%;
+  padding-top: 30px;
 }
 
 .msg-box-container textarea {
@@ -8,14 +8,14 @@
   border: 4px solid #2b2039;
   border-radius: 15px;
   height: 50px;
-  width: 85%;
-  margin-left: 15px;
+  width: 70%;
   color: white;
   font-size: 18px;
 }
 
 .msg-box-form form {
   display: flex;
+  justify-content: center;
 }
 
 .msg-box-container button {
@@ -26,7 +26,7 @@
 }
 
 .msg-box-container img {
-  width: 30px;
+  width: 25px;
 }
 
 .message-box {
