@@ -81,9 +81,9 @@ function Login(props) {
           <div>
             <a
               href="https://github.com/filipeqm94/client-project-4"
-              target="_blank"
+              target=" _blank"
             >
-              <img src={ghLogo} />
+              <img src={ghLogo} alt="GitHub Logo" />
               <h4>source code</h4>
             </a>
           </div>
