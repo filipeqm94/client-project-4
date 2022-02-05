@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useAuthDispatch } from '../../Context';
+import { useAuthDispatch, useAuthState } from '../../Context';
 import { signup } from '../../Context';
 
 import './styles.scss';
@@ -17,6 +17,7 @@ function SignUp() {
   });
 
   const dispatch = useAuthDispatch();
+  const { errorMessage } = useAuthState();
 
   function handleChange({ target }) {
     setSignupForm((prevSignupForm) => ({
@@ -58,6 +59,7 @@ function SignUp() {
   return (
     <div>
       <h2>SignUp</h2>
+      {errorMessage ? errorMessage : null}
       <form onSubmit={handleSubmit}>
         <label>
           Username:

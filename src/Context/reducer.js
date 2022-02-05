@@ -56,6 +56,11 @@ export const AuthReducer = (state = initialState, action) => {
         ...state,
         chatSocket: action.payload,
       };
+    case 'SIGNUP_ERROR':
+      return {
+        ...state,
+        errorMessage: action.payload,
+      };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
