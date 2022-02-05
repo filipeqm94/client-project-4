@@ -43,8 +43,13 @@ export const logout = async (dispatch) => {
 export const signup = async (dispatch, payload) => {
   axiosInstance
     .post('signup/', payload)
-    .then((res) => console.log(res))
-    .catch((error) => console.log(error.response));
+    .then((res) => {
+      if (res.status === 201) window.location.href = '/login';
+    })
+    .catch((error) =>{
+      dispatch({ type: 'SIGNUP_ERROR', payload: error.response.data.detail })
+    }
+    );
 };
 
 export const setUsersList = async (dispatch, payload) => {
