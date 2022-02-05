@@ -4,7 +4,7 @@ import { useAuthState } from '../../Context';
 import axiosInstance from '../../Context/axios';
 import Chat from './Chat';
 import MessageBox from './MessageBox';
-import maleIcon from '../../assets/images/male.png';
+import userIcon from '../../assets/images/user.png';
 
 function ChatArea({ chatSocket, chatRoom, messages, setMessages }) {
   const { username, user_id } = useAuthState();
@@ -22,7 +22,7 @@ function ChatArea({ chatSocket, chatRoom, messages, setMessages }) {
     <div className="chat-area-container">
       <div className="chat-area-info">
         <div className="user-img-holder">
-          <img src={maleIcon} />
+          <img src={userIcon} />
         </div>
         <h3>
           Chatting with <em>Victor W.</em>

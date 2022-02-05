@@ -3,14 +3,29 @@
 }
 
 .prof-top {
-  padding-left: 15px;
+  // padding-left: 15px;s
 }
 
 #username {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.prof-info > * {
-  margin-bottom: 10px;
+.prof-info {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+
+  * {
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
 }

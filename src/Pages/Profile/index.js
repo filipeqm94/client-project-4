@@ -11,10 +11,8 @@ function Profile() {
         {/* <h3>prof img</h3> */}
         <h3 id="username">{username}</h3>
         <div className="prof-info">
-          <p>PRIMARY</p>
-          <h3>{primary_language}</h3>
-          <p>LEARNING</p>
-          <h3>{learning_language}</h3>
+          <h3>Learning</h3>
+          <p>{learning_language}</p>
         </div>
         {/* <div className="prof-description">
           <h3>Bio:</h3>

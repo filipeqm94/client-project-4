@@ -6,7 +6,8 @@
 
 body {
   color: #eee;
-  background-color: #333;
+  background-color: #120e17;
+  background-image: linear-gradient(180deg, #120e17 0%, #181329 80%);
 }
 
 .main {
@@ -15,4 +16,7 @@ body {
   grid-template-columns: 2fr 3fr 1fr;
   background-color: #120e17;
   background-image: linear-gradient(180deg, #120e17 0%, #181329 80%);
+  margin: 0 auto;
+  max-width: 1100px;
+  border: 2px solid #2b2039;
 }
