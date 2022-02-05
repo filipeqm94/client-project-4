@@ -48,6 +48,7 @@
     border-radius: 6px;
     height: 25px;
     border: 1px solid #2b2039;
+    padding: 5px;
   }
 
   #submit-btn {
@@ -75,15 +76,23 @@
     margin-top: 15px;
     width: 100%;
     text-decoration: none;
-    background-color: #2b2039;
+    background-color: #a12568;
     height: 35px;
     text-align: center;
     border-radius: 6px;
   }
 
+  a:hover {
+    background-color: #2b2039;
+  }
+
   h3 {
     color: #ffdd59;
     padding-top: 5px;
+  }
+
+  h3:hover {
+    color: white;
   }
 }
 
@@ -125,7 +134,7 @@
   border-radius: 100%;
   background: #d2dae2;
   position: relative;
-  top: 145px;
+  top: 95px;
   left: -20px;
 }
 
@@ -142,5 +151,5 @@
   border: 2px solid #2b2039;
   display: block;
   margin: 0 auto;
-  margin-top: 110px;
+  margin-top: 60px;
 }
