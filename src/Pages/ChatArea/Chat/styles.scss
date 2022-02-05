@@ -1,6 +1,7 @@
 .chat-msg-container {
   overflow: scroll;
   padding: 15px;
+  box-sizing: border-box;
 }
 
 .sender {
