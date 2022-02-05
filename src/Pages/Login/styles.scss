@@ -91,8 +91,25 @@
   grid-column: 2;
 }
 
+#screen-shot-user {
+  width: 50px;
+  padding: 8px;
+  border-radius: 100%;
+  background: #d2dae2;
+  position: relative;
+  top: 145px;
+  left: -20px;
+}
+
+.screen-shot-area {
+  width: 40vw;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 #screen-shot {
-  width: 350px;
+  width: 40vw;
+  max-width: 400px;
   border-radius: 14px;
   border: 2px solid #2b2039;
   display: block;

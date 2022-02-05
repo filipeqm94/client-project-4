@@ -5,6 +5,7 @@ import { useAuthState, useAuthDispatch } from '../../Context/context';
 import { login } from '../../Context';
 
 import screenShot from '../../assets/images/screenshot-1.png';
+import userIcon from '../../assets/images/user.png';
 
 function Login(props) {
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
@@ -68,7 +69,10 @@ function Login(props) {
         </div>
       </div>
       <div className="content-side">
-        <img src={screenShot} id="screen-shot" />
+        <div className="screen-shot-area">
+          <img src={userIcon} id="screen-shot-user" />
+          <img src={screenShot} id="screen-shot" />
+        </div>
       </div>
     </div>
   );
