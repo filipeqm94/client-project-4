@@ -1,3 +1,4 @@
+import './styles.scss';
 import Profile from '../Profile';
 import ChatList from '../ChatList';
 import Options from '../Options';
@@ -10,7 +11,7 @@ function Navbar() {
         <img id="logo" src={chatterLogo} alt="chatter logo" />
       </div>
       <Profile />
-      <ChatList />
+      {/* <ChatList /> */}
       <Options />
     </div>
   );

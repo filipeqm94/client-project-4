@@ -1,0 +1,44 @@
+.msg-box-container {
+  height: 25%;
+  padding-top: 30px;
+  border-top: 2px solid #2b2039;
+}
+
+.msg-box-container textarea {
+  background: none;
+  border: 4px solid #2b2039;
+  border-radius: 15px;
+  height: 50px;
+  width: 70%;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.msg-box-form form {
+  display: flex;
+  justify-content: center;
+}
+
+.msg-box-container button {
+  background: none;
+  border: none;
+  display: block;
+  margin-left: 15px;
+}
+
+.msg-box-container button:hover {
+  cursor: pointer;
+}
+
+.msg-box-container img {
+  width: 25px;
+}
+
+.message-box {
+  width: 100%;
+}
+
+.message {
+  margin-top: 10px;
+}

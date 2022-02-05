@@ -1,3 +1,4 @@
+import './styles.scss';
 import { useState } from 'react';
 import { useAuthState } from '../../../Context/context';
 import sendIcon from '../../../assets/images/send.png';

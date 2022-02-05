@@ -1,26 +1,45 @@
+.chat-msg-container {
+  overflow: scroll;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
 .sender {
   text-align: end;
-  background-color: #4d38a2;
-  /* width: 50%; */
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
   color: #eee;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  grid-column: 2;
+  inline-size: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .sender p {
-  height: 50px;
-  width: 150px;
-  overflow: hidden;
+  width: fit-content;
+  max-width: 200px;
+  background-color: #4d38a2;
+  border-radius: 12px;
+  padding: 10px;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.receiver p {
+  width: fit-content;
+  max-width: 200px;
+  background-color: #19182b;
+  border-radius: 12px;
+  padding: 10px;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .receiver {
-  background-color: #19182b;
+  // text-align: end;
+  padding: 5px 10px 5px 10px;
   color: #eee;
-  /* width: 50%; */
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  grid-column: 1;
+  inline-size: 100%;
+  display: flex;
+  // justify-content: flex-end;
 }

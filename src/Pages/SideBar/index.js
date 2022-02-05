@@ -1,3 +1,4 @@
+import './styles.scss';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -54,8 +55,14 @@ function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
 
   return (
     <div className="sidebar-container">
-      <h3>All Chatters</h3>
-      <div>
+      <div className="sidebar-top">
+        <h3>Chatters speaking</h3>
+        <button>
+          <h4>{learning_language.toUpperCase()}</h4>
+        </button>
+      </div>
+
+      <div className="sidebar-users-holder">
         {usersList.map(({ username }) => (
           <button
             className="sidebar-users"

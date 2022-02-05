@@ -1,0 +1,26 @@
+.options-container {
+  grid-row: 4;
+}
+
+.options-container h4 {
+  margin-top: 10px;
+}
+
+.options-container button {
+  background: #fd7272;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 15px;
+  width: 70px;
+  height: 25px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+.options-container button:hover {
+  cursor: pointer;
+}

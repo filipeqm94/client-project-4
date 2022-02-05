@@ -1,0 +1,16 @@
+.nav-container {
+  grid-column: 1;
+  display: grid;
+  grid-template-rows: 1fr 2fr 5fr 1fr;
+  height: inherit;
+}
+
+.nav-top {
+  grid-row: 1;
+}
+
+#logo {
+  width: 150px;
+  display: block;
+  margin: 30px auto;
+}
