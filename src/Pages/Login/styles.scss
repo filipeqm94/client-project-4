@@ -6,13 +6,13 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.login-area {
+.login-side {
   background: white;
   grid-column: 1;
   color: #2b2039;
 }
 
-.login-area-top {
+.login-side-top {
   margin: 0 auto;
   margin-top: 100px;
   width: 90%;
@@ -34,6 +34,46 @@
   }
 }
 
-.content-area {
+.login-area {
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 30px;
+
+  label {
+    margin-bottom: 5px;
+  }
+  input {
+    margin-bottom: 10px;
+    display: block;
+    border-radius: 6px;
+    height: 25px;
+    border: 1px solid #2b2039;
+  }
+
+  #submit-btn {
+    background: none;
+    border: 2px solid #2b2039;
+    width: 80px;
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  #submit-btn:hover {
+    cursor: pointer;
+    background-color: #2b2039;
+    color: white;
+  }
+}
+
+.content-side {
   grid-column: 2;
+}
+
+#screen-shot {
+  width: 350px;
+  border-radius: 14px;
+  border: 2px solid #2b2039;
+  display: block;
+  margin: 0 auto;
+  margin-top: 110px;
 }
