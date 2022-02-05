@@ -21,6 +21,8 @@ function MessageBox({ chatSocket }) {
         message: chatMessage,
       })
     );
+
+    setChatMessage("")
   };
 
   return (
@@ -28,7 +30,7 @@ function MessageBox({ chatSocket }) {
       <div className="msg-box-form">
         <p id="chat-text-area"></p>
         <form>
-          <textarea onChange={changeHandler} className="message-box"></textarea>
+          <textarea onChange={changeHandler} value={chatMessage} className="message-box"></textarea>
           <button type="submit" value="Send" onClick={submitHandler}>
             <img src={sendIcon} alt="send icon" />
           </button>

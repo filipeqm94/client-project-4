@@ -61,7 +61,7 @@ function Login(props) {
           </form>
         </div>
         <div className="sign-up-area">
-          <p>
+          <div>
             New to Chatter?{' '}
             <Link to="/signup">
               <h3>Create an account</h3>
@@ -69,7 +69,7 @@ function Login(props) {
             <Routes>
               <Route path="/signup" element={SignUp}></Route>
             </Routes>
-          </p>
+          </div>
         </div>
       </div>
       <div className="content-side">
