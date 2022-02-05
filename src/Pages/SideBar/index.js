@@ -58,7 +58,7 @@ function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
       <div className="sidebar-top">
         <h3>Chatters speaking</h3>
         <button>
-          <h4>{learning_language.toUpperCase()}</h4>
+          <h4>{learning_language?.toUpperCase()}</h4>
         </button>
       </div>
 
