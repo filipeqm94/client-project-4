@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.chat-msg-container::-webkit-scrollbar {
+  display: none;
+}
+
 .sender {
   text-align: end;
   padding: 5px 10px 5px 10px;
