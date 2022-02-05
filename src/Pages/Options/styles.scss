@@ -1,7 +1,5 @@
 .options-container {
   grid-row: 4;
-  border-top: 2px solid #2b2039;
-  padding-left: 15px;
 }
 
 .options-container h4 {
@@ -17,6 +15,8 @@
   border-radius: 15px;
   width: 70px;
   height: 25px;
+  display: block;
+  margin: 0 auto;
   margin-top: 25px;
   font-size: 12px;
 }

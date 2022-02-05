@@ -23,10 +23,10 @@ function ChatArea({ chatSocket, chatRoom, messages, setMessages }) {
       <div className="chat-area-info">
         <div className="user-img-holder">
           <img src={userIcon} />
+          <h3>
+            Chatting with <em>Victor W.</em>
+          </h3>
         </div>
-        <h3>
-          Chatting with <em>Victor W.</em>
-        </h3>
       </div>
       <Chat messages={messages} user={username} id={user_id} />
       <MessageBox chatSocket={chatSocket} setMessages={setMessages} />

@@ -1,6 +1,7 @@
 .msg-box-container {
   height: 25%;
   padding-top: 30px;
+  border-top: 2px solid #2b2039;
 }
 
 .msg-box-container textarea {
@@ -24,6 +25,10 @@
   border: none;
   display: block;
   margin-left: 15px;
+}
+
+.msg-box-container button:hover {
+  cursor: pointer;
 }
 
 .msg-box-container img {

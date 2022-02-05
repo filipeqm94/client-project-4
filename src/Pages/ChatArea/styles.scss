@@ -1,7 +1,7 @@
 .chat-area-container {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
   grid-column: 2;
-  flex-direction: column;
   max-height: 100vh;
   border-right: 4px solid #2b2039;
   border-left: 4px solid #2b2039;
@@ -9,9 +9,8 @@
 
 .chat-area-info {
   display: flex;
-  padding: 15px;
+  padding: 25px;
   padding-bottom: 30px;
-  margin-top: 15px;
   border-bottom: 2px solid #2b2039;
 }
 
@@ -22,15 +21,16 @@
 }
 
 .user-img-holder {
-  background: #ced6e0;
-  min-width: 45px;
   height: 45px;
-  border-radius: 15px;
+  display: flex;
 }
 
 .user-img-holder img {
-  min-width: 30px;
-  height: 30px;
+  min-width: 40px;
+  background: #ced6e0;
+  border-radius: 8px;
+  padding: 6px;
+  height: 40px;
   display: block;
   margin: 0 auto;
   margin-top: 6px;
