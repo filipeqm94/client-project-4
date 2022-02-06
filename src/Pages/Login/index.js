@@ -62,7 +62,7 @@ function Login(props) {
         </div>
         <div className="sign-up-area">
           <div>
-            New to Chatter?{' '}
+            New to Chatter?
             <Link to="/signup">
               <h3>Create an account</h3>
             </Link>
