@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { useAuthDispatch, useAuthState } from '../../Context';
 import { signup } from '../../Context';
+import { Link } from 'react-router-dom';
 
 import '../Login/styles.scss';
 import ghLogo from '../../assets/images/gh-logo.png';
@@ -63,7 +64,6 @@ function SignUp() {
         <div className="screen-shot-area">
           <div>
             <h1 id="logo">Chatter</h1>
-            <h3>carousel</h3>
             <h1>About Us</h1>
             <p>
               Hi! We're Filipe Marques (portfolio link) and Victor Wang
@@ -181,6 +181,7 @@ function SignUp() {
               <option value="portuguese">Portuguese</option>
             </select>
             <input id="submit-btn" type="submit" value="Sign Up" />
+            <Link to="/login">Login</Link>
           </form>
         </div>
       </div>
