@@ -5,7 +5,10 @@ import { signup } from '../../Context';
 import { Link } from 'react-router-dom';
 
 import '../Login/styles.scss';
+import './styles.scss';
 import ghLogo from '../../assets/images/gh-logo.png';
+import fmPic from '../../assets/images/fm.png';
+import vwPic from '../../assets/images/vw.png';
 
 function SignUp() {
   const [signupForm, setSignupForm] = useState({
@@ -65,6 +68,14 @@ function SignUp() {
           <div>
             <h1 id="logo">Chatter</h1>
             <h1>About Us</h1>
+            <div className="headshots-area">
+              <div className="headshot-holder">
+                <img src={fmPic} id="fm" />
+              </div>
+              <div className="headshot-holder">
+                <img src={vwPic} id="vw" />
+              </div>
+            </div>
             <p>
               Hi! We're Filipe Marques (portfolio link) and Victor Wang
               (portfolio link), creators of Chatter. Our goal was to create a
@@ -73,10 +84,6 @@ function SignUp() {
               learning a little practice. Send a quick message and maybe even
               meet a new friend. We hope you enjoy using Chatter!
             </p>
-            <div>
-              <img />
-              <img />
-            </div>
           </div>
           <div>
             <h1>Roadmap</h1>

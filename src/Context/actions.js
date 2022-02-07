@@ -4,6 +4,7 @@ import {
   LOGOUT,
   LOGIN_ERROR,
   SET_USERS,
+  SET_ACTIVE_CHAT,
 } from './reducerActions';
 import axiosInstance from './axios';
 
@@ -46,14 +47,17 @@ export const signup = async (dispatch, payload) => {
     .then((res) => {
       if (res.status === 201) window.location.href = '/login';
     })
-    .catch((error) =>{
-      dispatch({ type: 'SIGNUP_ERROR', payload: error.response.data.detail })
-    }
-    );
+    .catch((error) => {
+      dispatch({ type: 'SIGNUP_ERROR', payload: error.response.data.detail });
+    });
 };
 
 export const setUsersList = async (dispatch, payload) => {
   dispatch({ type: SET_USERS, payload });
+};
+
+export const setActiveChat = async (dispatch, payload) => {
+  dispatch({ type: SET_ACTIVE_CHAT, payload });
 };
 
 export const setSocket = async (dispatch, payload) => {

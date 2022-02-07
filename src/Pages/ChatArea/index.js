@@ -7,7 +7,7 @@ import MessageBox from './MessageBox';
 import userIcon from '../../assets/images/user.png';
 
 function ChatArea({ chatSocket, chatRoom, messages, setMessages }) {
-  const { username, user_id } = useAuthState();
+  const { username, user_id, activeChat } = useAuthState();
 
   useEffect(() => {
     if (chatRoom) {
@@ -24,7 +24,7 @@ function ChatArea({ chatSocket, chatRoom, messages, setMessages }) {
         <div className="user-img-holder">
           <img src={userIcon} />
           <h3>
-            Chatting with <em>Victor W.</em>
+            Chatting with <em>{activeChat}</em>
           </h3>
         </div>
       </div>

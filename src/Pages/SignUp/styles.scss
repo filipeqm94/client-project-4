@@ -1,0 +1,20 @@
+.headshots-area {
+  display: flex;
+}
+
+.headshot-holder {
+  background-color: white;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+
+#fm,
+#vw {
+  width: 90px;
+  height: 90px;
+}
+
+#fm {
+  margin-top: 10px;
+}

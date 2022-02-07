@@ -4,6 +4,7 @@ import {
   LOGIN_ERROR,
   LOGOUT,
   SET_USERS,
+  SET_ACTIVE_CHAT,
 } from './reducerActions';
 
 let user = localStorage.getItem('current_user')
@@ -50,6 +51,11 @@ export const AuthReducer = (state = initialState, action) => {
       return {
         ...state,
         usersList: action.payload,
+      };
+    case SET_ACTIVE_CHAT:
+      return {
+        ...state,
+        activeChat: action.payload,
       };
     case 'SET_SOCKET':
       return {
