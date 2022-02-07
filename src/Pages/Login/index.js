@@ -29,14 +29,32 @@ function Login(props) {
 
   return (
     <div className="login-container">
+      <div className="content-side">
+        <div className="screen-shot-area">
+          <h1 id="logo">
+            <em>Chatter</em>
+          </h1>
+          <img src={userIcon} alt="Chtter user preview" id="screen-shot-user" />
+          <img src={screenShot} alt="Chtter chat preview" id="screen-shot" />
+        </div>
+        <footer>
+          <div>
+            <a
+              href="https://github.com/filipeqm94/client-project-4"
+              target=" _blank"
+            >
+              <img src={ghLogo} alt="GitHub Logo" />
+              <h4>source code</h4>
+            </a>
+          </div>
+        </footer>
+      </div>
       <div className="login-side">
         <div className="login-side-top">
-          <h1>
-            Welcome to <em>Chatter</em>
-          </h1>
+          <h1>Ready to chat ?</h1>
           <p>
-            Learning a new language? Practice by chatting with proficient
-            speakers and make new connections along the way!
+            Welcome to Chatter! Practice by chatting with proficient speakers
+            and make new connections along the way.
           </p>
         </div>
         <div className="login-area">
@@ -71,23 +89,6 @@ function Login(props) {
             </Routes>
           </div>
         </div>
-      </div>
-      <div className="content-side">
-        <div className="screen-shot-area">
-          <img src={userIcon} alt="Chtter user preview" id="screen-shot-user" />
-          <img src={screenShot} alt="Chtter chat preview" id="screen-shot" />
-        </div>
-        <footer>
-          <div>
-            <a
-              href="https://github.com/filipeqm94/client-project-4"
-              target=" _blank"
-            >
-              <img src={ghLogo} alt="GitHub Logo" />
-              <h4>source code</h4>
-            </a>
-          </div>
-        </footer>
       </div>
     </div>
   );

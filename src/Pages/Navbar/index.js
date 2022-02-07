@@ -8,7 +8,11 @@ function Navbar() {
   return (
     <div className="nav-container">
       <div className="nav-top">
-        <img id="logo" src={chatterLogo} alt="chatter logo" />
+        <div id="logo-holder">
+          <h1 id="logo">
+            <em>Chatter</em>
+          </h1>
+        </div>
       </div>
       <Profile />
       {/* <ChatList /> */}

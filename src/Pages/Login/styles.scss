@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
-
 .login-container {
   height: 100vh;
   display: grid;
@@ -8,7 +6,7 @@
 
 .login-side {
   background: white;
-  grid-column: 1;
+  grid-column: 2;
   color: #2b2039;
 }
 
@@ -16,12 +14,14 @@
   margin: 0 auto;
   margin-top: 100px;
   width: 90%;
-  text-align: center;
+  // text-align: center;
   em {
     font-family: 'Croissant One', cursive !important;
     font-style: normal;
-    font-weight: 400;
-    color: #a12568;
+    text-shadow: -2px -2px 1px #f53b57, -3.5px -3.5px 1px #34e7e4,
+      -5px -5px 1px #7d5fff;
+    color: #ffdd59;
+    letter-spacing: 1px;
   }
 
   p {
@@ -30,7 +30,11 @@
     margin-top: 10px;
     // border: 1px solid red;
     text-align: left;
-    line-height: 20px;
+    line-height: 22px;
+  }
+  h1 {
+    width: 320px;
+    margin: 0 auto;
   }
 }
 
@@ -53,10 +57,14 @@
 
   #submit-btn {
     background: none;
-    border: 2px solid #2b2039;
+    border: none;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
     width: 80px;
     height: 30px;
     border-radius: 6px;
+    background: #7d5fff;
   }
 
   #submit-btn:hover {
@@ -76,7 +84,7 @@
     margin-top: 15px;
     width: 100%;
     text-decoration: none;
-    background-color: #a12568;
+    background-color: #f53b57;
     height: 35px;
     text-align: center;
     border-radius: 6px;
@@ -87,8 +95,9 @@
   }
 
   h3 {
-    color: #ffdd59;
+    color: white;
     padding-top: 5px;
+    letter-spacing: 1px;
   }
 
   h3:hover {
@@ -97,13 +106,13 @@
 }
 
 .content-side {
-  grid-column: 2;
+  grid-column: 1;
 
   footer {
     position: fixed;
     bottom: 0;
     width: 50vw;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 
     div {
       width: 100px;
