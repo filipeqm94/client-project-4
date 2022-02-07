@@ -15,7 +15,7 @@ function Navbar() {
         </div>
       </div>
       <Profile />
-      {/* <ChatList /> */}
+      <ChatList />
       <Options />
     </div>
   );

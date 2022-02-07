@@ -5,6 +5,7 @@ import {
   LOGIN_ERROR,
   SET_USERS,
   SET_ACTIVE_CHAT,
+  SET_USER_CHATS,
 } from './reducerActions';
 import axiosInstance from './axios';
 
@@ -58,6 +59,10 @@ export const setUsersList = async (dispatch, payload) => {
 
 export const setActiveChat = async (dispatch, payload) => {
   dispatch({ type: SET_ACTIVE_CHAT, payload });
+};
+
+export const setUserChatList = async (dispatch, payload) => {
+  dispatch({ type: SET_USER_CHATS, payload });
 };
 
 export const setSocket = async (dispatch, payload) => {

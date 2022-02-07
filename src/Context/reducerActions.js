@@ -4,4 +4,5 @@ export const LOGOUT = 'LOGOUT';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const SET_USERS = 'SET_USERS';
 export const SET_ACTIVE_CHAT = 'SET_ACTIVE_CHAT';
+export const SET_USER_CHATS = 'SET_USER_CHATS';
 export const SET_SOCKET = 'SET_SOCKET';
