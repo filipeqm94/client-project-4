@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
-
 .login-container {
   height: 100vh;
   display: grid;
@@ -8,39 +6,49 @@
 
 .login-side {
   background: white;
-  grid-column: 1;
+  grid-column: 2;
   color: #2b2039;
 }
 
 .login-side-top {
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 150px;
   width: 90%;
-  text-align: center;
+  // text-align: center;
   em {
     font-family: 'Croissant One', cursive !important;
     font-style: normal;
-    font-weight: 400;
-    color: #a12568;
+    text-shadow: -2px -2px 1px #f53b57, -3.5px -3.5px 1px #34e7e4,
+      -5px -5px 1px #7d5fff;
+    color: #ffdd59;
+    letter-spacing: 1px;
   }
 
   p {
     width: 320px;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 20px;
     // border: 1px solid red;
     text-align: left;
-    line-height: 20px;
+    line-height: 22px;
+  }
+  h1 {
+    width: 320px;
+    margin: 0 auto;
   }
 }
 
 .login-area {
   width: 320px;
   margin: 0 auto;
-  margin-top: 30px;
-
+  margin-top: 40px;
+  input,
   label {
-    margin-bottom: 5px;
+    width: 100%;
+  }
+  label {
+    margin-bottom: 10px;
+    display: block;
   }
   input {
     margin-bottom: 10px;
@@ -53,10 +61,16 @@
 
   #submit-btn {
     background: none;
-    border: 2px solid #2b2039;
-    width: 80px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
     height: 30px;
     border-radius: 6px;
+    background: #7d5fff;
+    font-size: 16px;
+    margin-top: 20px;
   }
 
   #submit-btn:hover {
@@ -66,44 +80,37 @@
   }
 }
 
-.sign-up-area {
+.sign-up-box {
   width: 320px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
 
-  a {
+  #create_acct_btn {
     display: block;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     width: 100%;
     text-decoration: none;
-    background-color: #a12568;
-    height: 35px;
+    background-color: #f53b57;
+    height: 30px;
     text-align: center;
     border-radius: 6px;
-  }
-
-  a:hover {
-    background-color: #2b2039;
-  }
-
-  h3 {
-    color: #ffdd59;
-    padding-top: 5px;
-  }
-
-  h3:hover {
     color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding-top: 6px;
   }
 }
 
 .content-side {
-  grid-column: 2;
+  grid-column: 1;
+  overflow: hidden;
 
   footer {
     position: fixed;
     bottom: 0;
     width: 50vw;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 
     div {
       width: 100px;
@@ -128,28 +135,70 @@
   }
 }
 
-#screen-shot-user {
-  width: 50px;
-  padding: 8px;
-  border-radius: 100%;
-  background: #d2dae2;
-  position: relative;
-  top: 95px;
-  left: -20px;
-}
-
 .screen-shot-area {
-  width: 40vw;
+  width: 300px;
   max-width: 400px;
   margin: 0 auto;
-}
 
-#screen-shot {
-  width: 40vw;
-  max-width: 400px;
-  border-radius: 14px;
-  border: 2px solid #2b2039;
-  display: block;
-  margin: 0 auto;
-  margin-top: 60px;
+  h1 {
+    // margin-left: -5px;
+    margin-top: 38px;
+    font-size: 48px;
+    // margin-left: -20px;
+  }
+  .screen-shot-user {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid #fec260;
+    // margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 46px;
+  }
+
+  .left {
+    left: -15px;
+  }
+
+  .right {
+    left: 88%;
+  }
+
+  #screen-shot-1 {
+    position: relative;
+    left: 28px;
+    top: -54px;
+  }
+
+  #screen-shot-2 {
+    position: relative;
+    left: -41px;
+    top: -177px;
+    z-index: 1;
+  }
+
+  #screen-shot-3 {
+    position: relative;
+    left: 28px;
+    top: -261px;
+  }
+
+  #screen-shot {
+    width: 260px;
+    border-radius: 14px;
+    border: 2px solid #2b2039;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 2px 1px 5px #7d5fff;
+  }
+
+  #screen-shot-left {
+    width: 280px;
+    border-radius: 14px;
+    border: 2px solid #2b2039;
+    display: block;
+    margin: 0 auto;
+    box-shadow: -2px 1px 5px #7d5fff;
+  }
 }

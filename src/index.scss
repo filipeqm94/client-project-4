@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
 
 * {
   box-sizing: border-box;
@@ -22,4 +23,15 @@ body {
   margin: 0 auto;
   max-width: 1100px;
   border: 2px solid #2b2039;
+}
+
+.logo {
+  width: fit-content;
+  display: block;
+  margin: 30px auto;
+  font-family: 'Croissant One', cursive !important;
+  text-shadow: -2px -2px 1px #f53b57, -3.5px -3.5px 1px #34e7e4,
+    -5px -5px 1px #7d5fff;
+  color: #ffdd59;
+  letter-spacing: 1px;
 }

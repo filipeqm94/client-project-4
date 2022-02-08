@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAuthState, useAuthDispatch } from '../../Context/context';
 import axiosInstance from '../../Context/axios';
-import { setUsersList } from '../../Context/actions';
+import { setUsersList, setActiveChat } from '../../Context/actions';
+import { useState } from 'react';
 
 function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
   const { username, usersList, primary_language, learning_language } =
@@ -32,7 +33,7 @@ function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
     if (chatSocket) {
       chatSocket.close();
     }
-
+    setActiveChat(dispatch, targetUser);
     // formulate room name
     const chatRoomName = [username, targetUser].sort().join('_');
     setChatRoom(chatRoomName);
