@@ -39,42 +39,44 @@ function Login(props) {
           <h1 className="logo">
             <em>Chatter</em>
           </h1>
-          <div id="screen-shot-1">
-            <img
-              src={fakeUser3}
-              alt="Chatter user preview"
-              className="screen-shot-user right"
-            />
-            <img
-              src={screenShot3}
-              alt="Chatter chat preview"
-              id="screen-shot"
-            />
-          </div>{' '}
-          <div id="screen-shot-2">
-            <img
-              src={fakeUser1}
-              alt="Chatter user preview"
-              className="screen-shot-user left"
-            />
-            <img
-              src={screenShot1}
-              alt="Chatter chat preview"
-              id="screen-shot-left"
-            />
-          </div>
-          <div id="screen-shot-3">
-            <img
-              src={fakeUser2}
-              alt="Chatter user preview"
-              id="screen-shot-user"
-              className="screen-shot-user right"
-            />
-            <img
-              src={screenShot2}
-              alt="Chatter chat preview"
-              id="screen-shot"
-            />
+          <div className="screenshots">
+            <div id="screen-shot-1">
+              <img
+                src={fakeUser3}
+                alt="Chatter user preview"
+                className="screen-shot-user right"
+              />
+              <img
+                src={screenShot3}
+                alt="Chatter chat preview"
+                id="screen-shot"
+              />
+            </div>{' '}
+            <div id="screen-shot-2">
+              <img
+                src={fakeUser1}
+                alt="Chatter user preview"
+                className="screen-shot-user left"
+              />
+              <img
+                src={screenShot1}
+                alt="Chatter chat preview"
+                id="screen-shot-left"
+              />
+            </div>
+            <div id="screen-shot-3">
+              <img
+                src={fakeUser2}
+                alt="Chatter user preview"
+                id="screen-shot-user"
+                className="screen-shot-user right"
+              />
+              <img
+                src={screenShot2}
+                alt="Chatter chat preview"
+                id="screen-shot"
+              />
+            </div>
           </div>
         </div>
         <footer>
