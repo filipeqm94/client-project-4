@@ -63,10 +63,11 @@ function SignUp() {
   return (
     <div className="sign-up-container">
       <div className="content-side">
-        <div className="screen-shot-area">
+        <div className="about-container">
           <div>
-            <h1 id="logo">Chatter</h1>
-            <h1>About Us</h1>
+            <h1 className="logo">
+              <em>Chatter</em>
+            </h1>
             <div className="headshots-area">
               <div className="headshot-holder">
                 <img src={fmPic} id="fm" />
@@ -75,24 +76,30 @@ function SignUp() {
                 <img src={vwPic} id="vw" />
               </div>
             </div>
-            <p>
-              Hi! We're Filipe Marques (portfolio link) and Victor Wang
-              (portfolio link), creators of Chatter. Our goal was to create a
-              lightweight app that anyone could just pick up and use anytime.
-              Find people from all walks of life and give the language you're
-              learning a little practice. Send a quick message and maybe even
-              meet a new friend. We hope you enjoy using Chatter!
-            </p>
           </div>
-          <div>
+          <div className="about-content">
+            <h1>About Us</h1>
+            <p>
+              Hi! We're
+              <a href="https://filipemarques.me/" target="_blank">
+                Filipe Marques
+              </a>
+              and
+              <a href="http://www.victorwang.me/" target="_blank">
+                Victor Wang
+              </a>
+              -- creators of Chatter. Our goal was to create a lightweight app
+              that anyone could just pick up and use anytime. Find people from
+              all walks of life and give the language you're learning a little
+              practice. Send a quick message and maybe even meet a new friend.
+              We hope you enjoy using Chatter!
+            </p>
             <h1>Roadmap</h1>
             <p>
               More features are coming your way. Check out our development board
               to see what we're working on. If you have any suggestions, you can
               find our contact information below.
             </p>
-          </div>
-          <div>
             <h1>Contact</h1>
             <p>
               Got questions or feedback? Send us a message, we'd love to

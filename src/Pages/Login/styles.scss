@@ -104,6 +104,7 @@
 
 .content-side {
   grid-column: 1;
+  overflow: hidden;
 
   footer {
     position: fixed;
@@ -134,33 +135,70 @@
   }
 }
 
-#screen-shot-user {
-  width: 60px;
-  // padding: 8px;
-  border-radius: 100%;
-  border: 2px solid #ffdd59;
-  position: relative;
-  top: 100px;
-}
-
 .screen-shot-area {
-  width: 40vw;
+  width: 300px;
   max-width: 400px;
   margin: 0 auto;
 
   h1 {
-    margin: 0;
-    margin-top: 40px;
+    // margin-left: -5px;
+    margin-top: 38px;
     font-size: 48px;
+    // margin-left: -20px;
   }
-}
+  .screen-shot-user {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid #fec260;
+    // margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 46px;
+  }
 
-#screen-shot {
-  width: 35vw;
-  max-width: 400px;
-  border-radius: 14px;
-  border: 2px solid #2b2039;
-  display: block;
-  margin: 0 auto;
-  margin-top: 60px;
+  .left {
+    left: -15px;
+  }
+
+  .right {
+    left: 88%;
+  }
+
+  #screen-shot-1 {
+    position: relative;
+    left: 28px;
+    top: -54px;
+  }
+
+  #screen-shot-2 {
+    position: relative;
+    left: -41px;
+    top: -177px;
+    z-index: 1;
+  }
+
+  #screen-shot-3 {
+    position: relative;
+    left: 28px;
+    top: -261px;
+  }
+
+  #screen-shot {
+    width: 260px;
+    border-radius: 14px;
+    border: 2px solid #2b2039;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 2px 1px 5px #7d5fff;
+  }
+
+  #screen-shot-left {
+    width: 280px;
+    border-radius: 14px;
+    border: 2px solid #2b2039;
+    display: block;
+    margin: 0 auto;
+    box-shadow: -2px 1px 5px #7d5fff;
+  }
 }

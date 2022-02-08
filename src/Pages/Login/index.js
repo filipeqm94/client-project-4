@@ -4,7 +4,9 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { useAuthState, useAuthDispatch } from '../../Context/context';
 import { login } from '../../Context';
 import SignUp from '../SignUp/index';
-import screenShot from '../../assets/images/screenshot-1.png';
+import screenShot1 from '../../assets/images/screenshot-1.png';
+import screenShot2 from '../../assets/images/screenshot-2.png';
+import screenShot3 from '../../assets/images/screenshot-3.png';
 import userIcon from '../../assets/images/user.png';
 import ghLogo from '../../assets/images/gh-logo.png';
 import fakeUser1 from '../../assets/images/fake-user-1.png';
@@ -37,12 +39,43 @@ function Login(props) {
           <h1 className="logo">
             <em>Chatter</em>
           </h1>
-          <img
-            src={fakeUser1}
-            alt="Chatter user preview"
-            id="screen-shot-user"
-          />
-          <img src={screenShot} alt="Chatter chat preview" id="screen-shot" />
+          <div id="screen-shot-1">
+            <img
+              src={fakeUser3}
+              alt="Chatter user preview"
+              className="screen-shot-user right"
+            />
+            <img
+              src={screenShot3}
+              alt="Chatter chat preview"
+              id="screen-shot"
+            />
+          </div>{' '}
+          <div id="screen-shot-2">
+            <img
+              src={fakeUser1}
+              alt="Chatter user preview"
+              className="screen-shot-user left"
+            />
+            <img
+              src={screenShot1}
+              alt="Chatter chat preview"
+              id="screen-shot-left"
+            />
+          </div>
+          <div id="screen-shot-3">
+            <img
+              src={fakeUser2}
+              alt="Chatter user preview"
+              id="screen-shot-user"
+              className="screen-shot-user right"
+            />
+            <img
+              src={screenShot2}
+              alt="Chatter chat preview"
+              id="screen-shot"
+            />
+          </div>
         </div>
         <footer>
           <div>

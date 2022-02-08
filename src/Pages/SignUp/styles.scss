@@ -1,30 +1,62 @@
+.about-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  h1 {
+    font-size: 48px;
+    margin-bottom: 0px;
+  }
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 0px 60px 0px 60px;
+  text-align: center;
+
+  h1 {
+    font-size: 25px;
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  p {
+    line-height: 22px;
+    margin-top: 10px;
+    text-align: justify;
+  }
+
+  a {
+    color: #fec260;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
 .headshots-area {
   display: flex;
+  justify-content: center;
+  gap: 15px;
+  background: #fec260;
+  margin-top: 24px;
+  height: 120px;
 }
 
 .headshot-holder {
-  background-color: white;
-  border-radius: 100%;
   width: 120px;
   height: 120px;
+  margin-top: -10px;
 }
 
 #fm,
 #vw {
-  width: 100px;
-  // height: 90px;
-  height: fit-content;
-  margin: 0;
-  // border-radius: 20%;
-  // background: white;
-  margin-left: 10px;
-  object-fit: cover;
-}
-
-#fm {
-  width: 106px;
-  // margin-top: 2spx;
-  // margin-left: 5px;
+  width: 130px;
+  // margin: 0;
+  // border-radius: 100%;
 }
 
 .sign-up-container {
@@ -41,7 +73,7 @@
 
 .sign-up-side-top {
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 50px;
   width: 90%;
   // text-align: center;
   em {
@@ -56,7 +88,7 @@
   p {
     width: 320px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
     // border: 1px solid red;
     text-align: left;
     line-height: 22px;
@@ -70,7 +102,7 @@
 .sign-up-area {
   width: 320px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 15px;
 
   #login-back {
     display: block;
@@ -102,13 +134,13 @@
     color: white;
   }
   label {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: block;
   }
   input,
   select {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: block;
     border-radius: 6px;
     height: 25px;
