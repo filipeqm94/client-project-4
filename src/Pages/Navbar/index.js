@@ -9,7 +9,7 @@ function Navbar() {
     <div className="nav-container">
       <div className="nav-top">
         <div id="logo-holder">
-          <h1 id="logo">
+          <h1 className="logo">
             <em>Chatter</em>
           </h1>
         </div>

@@ -12,7 +12,7 @@
 
 .login-side-top {
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 150px;
   width: 90%;
   // text-align: center;
   em {
@@ -27,7 +27,7 @@
   p {
     width: 320px;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 20px;
     // border: 1px solid red;
     text-align: left;
     line-height: 22px;
@@ -41,10 +41,14 @@
 .login-area {
   width: 320px;
   margin: 0 auto;
-  margin-top: 30px;
-
+  margin-top: 40px;
+  input,
   label {
-    margin-bottom: 5px;
+    width: 100%;
+  }
+  label {
+    margin-bottom: 10px;
+    display: block;
   }
   input {
     margin-bottom: 10px;
@@ -61,10 +65,12 @@
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
-    width: 80px;
+    width: 100%;
     height: 30px;
     border-radius: 6px;
     background: #7d5fff;
+    font-size: 16px;
+    margin-top: 20px;
   }
 
   #submit-btn:hover {
@@ -74,34 +80,25 @@
   }
 }
 
-.sign-up-area {
+.sign-up-box {
   width: 320px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 30px;
 
-  a {
+  #create_acct_btn {
     display: block;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     width: 100%;
     text-decoration: none;
     background-color: #f53b57;
-    height: 35px;
+    height: 30px;
     text-align: center;
     border-radius: 6px;
-  }
-
-  a:hover {
-    background-color: #2b2039;
-  }
-
-  h3 {
     color: white;
-    padding-top: 5px;
     letter-spacing: 1px;
-  }
-
-  h3:hover {
-    color: white;
+    font-weight: 700;
+    padding-top: 6px;
   }
 }
 
@@ -138,23 +135,28 @@
 }
 
 #screen-shot-user {
-  width: 50px;
-  padding: 8px;
+  width: 60px;
+  // padding: 8px;
   border-radius: 100%;
-  background: #d2dae2;
+  border: 2px solid #ffdd59;
   position: relative;
-  top: 95px;
-  left: -20px;
+  top: 100px;
 }
 
 .screen-shot-area {
   width: 40vw;
   max-width: 400px;
   margin: 0 auto;
+
+  h1 {
+    margin: 0;
+    margin-top: 40px;
+    font-size: 48px;
+  }
 }
 
 #screen-shot {
-  width: 40vw;
+  width: 35vw;
   max-width: 400px;
   border-radius: 14px;
   border: 2px solid #2b2039;

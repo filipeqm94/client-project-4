@@ -7,6 +7,9 @@ import SignUp from '../SignUp/index';
 import screenShot from '../../assets/images/screenshot-1.png';
 import userIcon from '../../assets/images/user.png';
 import ghLogo from '../../assets/images/gh-logo.png';
+import fakeUser1 from '../../assets/images/fake-user-1.png';
+import fakeUser2 from '../../assets/images/fake-user-2.png';
+import fakeUser3 from '../../assets/images/fake-user-3.png';
 
 function Login(props) {
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
@@ -31,11 +34,15 @@ function Login(props) {
     <div className="login-container">
       <div className="content-side">
         <div className="screen-shot-area">
-          <h1 id="logo">
+          <h1 className="logo">
             <em>Chatter</em>
           </h1>
-          <img src={userIcon} alt="Chtter user preview" id="screen-shot-user" />
-          <img src={screenShot} alt="Chtter chat preview" id="screen-shot" />
+          <img
+            src={fakeUser1}
+            alt="Chatter user preview"
+            id="screen-shot-user"
+          />
+          <img src={screenShot} alt="Chatter chat preview" id="screen-shot" />
         </div>
         <footer>
           <div>
@@ -78,11 +85,11 @@ function Login(props) {
             <input type="submit" value="Submit" id="submit-btn" />
           </form>
         </div>
-        <div className="sign-up-area">
+        <div className="sign-up-box">
           <div>
             New to Chatter?
-            <Link to="/signup">
-              <h3>Create an account</h3>
+            <Link to="/signup" id="create_acct_btn">
+              <h4>Create an account</h4>
             </Link>
             <Routes>
               <Route path="/signup" element={SignUp}></Route>

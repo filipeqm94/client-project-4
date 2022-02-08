@@ -4,7 +4,6 @@ import { useAuthDispatch, useAuthState } from '../../Context';
 import { signup } from '../../Context';
 import { Link } from 'react-router-dom';
 
-import '../Login/styles.scss';
 import './styles.scss';
 import ghLogo from '../../assets/images/gh-logo.png';
 import fmPic from '../../assets/images/fm.png';
@@ -62,7 +61,7 @@ function SignUp() {
   }
 
   return (
-    <div className="login-container">
+    <div className="sign-up-container">
       <div className="content-side">
         <div className="screen-shot-area">
           <div>
@@ -113,15 +112,18 @@ function SignUp() {
           </div>
         </footer>
       </div>
-      <div className="login-side">
-        <div className="login-side-top">
+      <div className="sign-up-side">
+        <div className="sign-up-side-top">
           <h1>Create an account</h1>
           <p>
             Sign up to get started. Your Primary Language will be the language
             you're most comfortabe with.
           </p>
         </div>
-        <div className="login-area">
+        <div className="sign-up-area">
+          <Link id="login-back" to="/login">
+            <h4>Returning? Log in here.</h4>
+          </Link>
           <form onSubmit={handleSubmit}>
             <label>Username</label>
             <input
@@ -173,7 +175,7 @@ function SignUp() {
             />
             <label>Primary Language</label>
             <select onChange={handleChange} name="primaryLanguage" required>
-              <option value="">Please choose a language</option>
+              <option value=""></option>
               <option value="english">English</option>
               <option value="spanish">Spanish</option>
               <option value="french">French</option>
@@ -181,14 +183,13 @@ function SignUp() {
             </select>
             <label>Learning Language</label>
             <select onChange={handleChange} name="learningLanguage" required>
-              <option value="">Please choose a language</option>
+              <option value=""></option>
               <option value="english">English</option>
               <option value="spanish">Spanish</option>
               <option value="french">French</option>
               <option value="portuguese">Portuguese</option>
             </select>
             <input id="submit-btn" type="submit" value="Sign Up" />
-            <Link to="/login">Login</Link>
           </form>
         </div>
       </div>

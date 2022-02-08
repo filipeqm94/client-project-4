@@ -24,3 +24,14 @@ body {
   max-width: 1100px;
   border: 2px solid #2b2039;
 }
+
+.logo {
+  width: 138px;
+  display: block;
+  margin: 30px auto;
+  font-family: 'Croissant One', cursive !important;
+  text-shadow: -2px -2px 1px #f53b57, -3.5px -3.5px 1px #34e7e4,
+    -5px -5px 1px #7d5fff;
+  color: #ffdd59;
+  letter-spacing: 1px;
+}

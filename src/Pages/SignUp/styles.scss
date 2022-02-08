@@ -5,16 +5,128 @@
 .headshot-holder {
   background-color: white;
   border-radius: 100%;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 
 #fm,
 #vw {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  // height: 90px;
+  height: fit-content;
+  margin: 0;
+  // border-radius: 20%;
+  // background: white;
+  margin-left: 10px;
+  object-fit: cover;
 }
 
 #fm {
-  margin-top: 10px;
+  width: 106px;
+  // margin-top: 2spx;
+  // margin-left: 5px;
+}
+
+.sign-up-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sign-up-side {
+  background: white;
+  grid-column: 2;
+  color: #2b2039;
+}
+
+.sign-up-side-top {
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 90%;
+  // text-align: center;
+  em {
+    font-family: 'Croissant One', cursive !important;
+    font-style: normal;
+    text-shadow: -2px -2px 1px #f53b57, -3.5px -3.5px 1px #34e7e4,
+      -5px -5px 1px #7d5fff;
+    color: #ffdd59;
+    letter-spacing: 1px;
+  }
+
+  p {
+    width: 320px;
+    margin: 0 auto;
+    margin-top: 20px;
+    // border: 1px solid red;
+    text-align: left;
+    line-height: 22px;
+  }
+  h1 {
+    width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.sign-up-area {
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 30px;
+
+  #login-back {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-decoration: none;
+    background-color: #f53b57;
+    height: 30px;
+    text-align: center;
+    border-radius: 6px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding-top: 6px;
+  }
+
+  a:hover {
+    background-color: #2b2039;
+  }
+
+  h3 {
+    color: white;
+    padding-top: 4px;
+    letter-spacing: 1px;
+  }
+
+  h3:hover {
+    color: white;
+  }
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  input,
+  select {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+    border-radius: 6px;
+    height: 25px;
+    border: 1px solid #2b2039;
+    padding: 5px;
+  }
+
+  #submit-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    background: #7d5fff;
+    margin-top: 30px;
+    font-size: 16px;
+  }
 }
