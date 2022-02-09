@@ -92,43 +92,45 @@ function Login(props) {
         </footer>
       </div>
       <div className="login-side">
-        <div className="login-side-top">
-          <h1>Ready to chat ?</h1>
-          <p>
-            Welcome to Chatter! Practice by chatting with proficient speakers
-            and make new connections along the way.
-          </p>
-        </div>
-        <div className="login-area">
-          {loading ? <p>Loading</p> : null}
-          <p>{errorMessage ? errorMessage : null}</p>
-          <form onSubmit={handleSubmit}>
-            <label>Username</label>
-            <input
-              name="username"
-              type="text"
-              value={loginForm.username}
-              onChange={handleLogin}
-            />
-            <label>Password</label>
-            <input
-              name="password"
-              type="password"
-              value={loginForm.password}
-              onChange={handleLogin}
-            />
-            <input type="submit" value="Submit" id="submit-btn" />
-          </form>
-        </div>
-        <div className="sign-up-box">
-          <div>
-            New to Chatter?
-            <Link to="/signup" id="create_acct_btn">
-              <h4>Create an account</h4>
-            </Link>
-            <Routes>
-              <Route path="/signup" element={SignUp}></Route>
-            </Routes>
+        <div>
+          <div className="login-side-top">
+            <h1>Ready to chat ?</h1>
+            <p>
+              Welcome to Chatter! Practice by chatting with proficient speakers
+              and make new connections along the way.
+            </p>
+          </div>
+          <div className="login-area">
+            {loading ? <p>Loading</p> : null}
+            <p>{errorMessage ? errorMessage : null}</p>
+            <form onSubmit={handleSubmit}>
+              <label>Username</label>
+              <input
+                name="username"
+                type="text"
+                value={loginForm.username}
+                onChange={handleLogin}
+              />
+              <label>Password</label>
+              <input
+                name="password"
+                type="password"
+                value={loginForm.password}
+                onChange={handleLogin}
+              />
+              <input type="submit" value="Submit" id="submit-btn" />
+            </form>
+          </div>
+          <div className="sign-up-box">
+            <div>
+              New to Chatter?
+              <Link to="/signup" id="create_acct_btn">
+                <h4>Create an account</h4>
+              </Link>
+              <Routes>
+                <Route path="/signup" element={SignUp}></Route>
+              </Routes>
+            </div>
           </div>
         </div>
       </div>

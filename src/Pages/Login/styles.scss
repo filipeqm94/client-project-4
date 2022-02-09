@@ -10,11 +10,16 @@
   color: #2b2039;
 }
 
+.login-side > div {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
 .login-side-top {
   margin: 0 auto;
-  margin-top: 150px;
-  width: 90%;
-  // text-align: center;
+  // width: 90%;
   em {
     font-family: 'Croissant One', cursive !important;
     font-style: normal;
@@ -26,7 +31,7 @@
 
   p {
     width: 320px;
-    margin: 0 auto;
+    // margin: 0 auto;
     margin-top: 20px;
     // border: 1px solid red;
     text-align: left;

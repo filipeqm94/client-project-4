@@ -120,84 +120,86 @@ function SignUp() {
         </footer>
       </div>
       <div className="sign-up-side">
-        <div className="sign-up-side-top">
-          <h1>Create an account</h1>
-          <p>
-            Sign up to get started. Your Primary Language will be the language
-            you're most comfortabe with.
-          </p>
-        </div>
-        <div className="sign-up-area">
-          <Link id="login-back" to="/login">
-            <h4>Returning? Log in here.</h4>
-          </Link>
-          <form onSubmit={handleSubmit}>
-            <label>Username</label>
-            <input
-              type="text"
-              name="username"
-              required
-              maxLength="16"
-              value={signupForm.username}
-              onChange={handleChange}
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              required
-              minLength="8"
-              value={signupForm.password}
-              onChange={handleChange}
-            />
-            {signupForm.password !== signupForm.confirmPwd ? (
-              <p>Passwords must match</p>
-            ) : null}
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              name="confirmPwd"
-              required
-              value={signupForm.confirmPwd}
-              onChange={handleChange}
-            />
-            <label>Email</label>
-            <input
-              type="email"
-              name="email"
-              required
-              value={signupForm.email}
-              onChange={handleChange}
-            />
-            {signupForm.email !== signupForm.confirmEmail ? (
-              <p>Emails must match</p>
-            ) : null}
-            <label>Confirm Email</label>
-            <input
-              type="email"
-              name="confirmEmail"
-              required
-              value={signupForm.confirmEmail}
-              onChange={handleChange}
-            />
-            <label>Primary Language</label>
-            <select onChange={handleChange} name="primaryLanguage" required>
-              <option value=""></option>
-              <option value="english">English</option>
-              <option value="spanish">Spanish</option>
-              <option value="french">French</option>
-              <option value="portuguese">Portuguese</option>
-            </select>
-            <label>Learning Language</label>
-            <select onChange={handleChange} name="learningLanguage" required>
-              <option value=""></option>
-              <option value="english">English</option>
-              <option value="spanish">Spanish</option>
-              <option value="french">French</option>
-              <option value="portuguese">Portuguese</option>
-            </select>
-            <input id="submit-btn" type="submit" value="Sign Up" />
-          </form>
+        <div>
+          <div className="sign-up-side-top">
+            <h1>Create an account</h1>
+            <p>
+              Sign up to get started. Your Primary Language will be the language
+              you're most comfortabe with.
+            </p>
+          </div>
+          <div className="sign-up-area">
+            <Link id="login-back" to="/login">
+              <h4>Returning? Log in here.</h4>
+            </Link>
+            <form onSubmit={handleSubmit}>
+              <label>Username</label>
+              <input
+                type="text"
+                name="username"
+                required
+                maxLength="16"
+                value={signupForm.username}
+                onChange={handleChange}
+              />
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                required
+                minLength="8"
+                value={signupForm.password}
+                onChange={handleChange}
+              />
+              {signupForm.password !== signupForm.confirmPwd ? (
+                <p>Passwords must match</p>
+              ) : null}
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                name="confirmPwd"
+                required
+                value={signupForm.confirmPwd}
+                onChange={handleChange}
+              />
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                value={signupForm.email}
+                onChange={handleChange}
+              />
+              {signupForm.email !== signupForm.confirmEmail ? (
+                <p>Emails must match</p>
+              ) : null}
+              <label>Confirm Email</label>
+              <input
+                type="email"
+                name="confirmEmail"
+                required
+                value={signupForm.confirmEmail}
+                onChange={handleChange}
+              />
+              <label>Primary Language</label>
+              <select onChange={handleChange} name="primaryLanguage" required>
+                <option value=""></option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="portuguese">Portuguese</option>
+              </select>
+              <label>Learning Language</label>
+              <select onChange={handleChange} name="learningLanguage" required>
+                <option value=""></option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="portuguese">Portuguese</option>
+              </select>
+              <input id="submit-btn" type="submit" value="Sign Up" />
+            </form>
+          </div>
         </div>
       </div>
     </div>

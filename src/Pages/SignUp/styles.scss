@@ -71,9 +71,15 @@
   color: #2b2039;
 }
 
+.sign-up-side > div {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+}
+
 .sign-up-side-top {
   margin: 0 auto;
-  margin-top: 50px;
   width: 90%;
   // text-align: center;
   em {
