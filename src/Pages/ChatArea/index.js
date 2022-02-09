@@ -25,9 +25,7 @@ function ChatArea() {
       <div className="chat-area-info">
         <div className="user-img-holder">
           <img src={userIcon} />
-          <h3>
-            Chatting with <em>{activeChat}</em>
-          </h3>
+          <h3>{activeChat}</h3>
         </div>
       </div>
       <Chat id={user_id} />

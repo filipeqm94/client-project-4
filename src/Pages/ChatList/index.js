@@ -26,7 +26,7 @@ function ChatList({ handleClick }) {
                     <img src={maleIcon} alt="user icon" />
                   </div>
                   <div className="chat-info">
-                    <h3 className="chat-info-name">{username}</h3>
+                    <h4 className="chat-info-name">{username}</h4>
                     {/* chat preview - truncated */}
                     <p>Lorem ipsum dolor sit amet.</p>
                   </div>
