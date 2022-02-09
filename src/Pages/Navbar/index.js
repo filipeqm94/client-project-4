@@ -4,7 +4,7 @@ import ChatList from '../ChatList';
 import Options from '../Options';
 import chatterLogo from '../../assets/images/chatter-logo.png';
 
-function Navbar() {
+function Navbar({ handleClick }) {
   return (
     <div className="nav-container">
       <div className="nav-top">
@@ -15,7 +15,7 @@ function Navbar() {
         </div>
       </div>
       {/* <Profile /> */}
-      <ChatList />
+      <ChatList handleClick={handleClick} />
       <Options />
     </div>
   );

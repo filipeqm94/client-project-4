@@ -3,7 +3,7 @@ import maleIcon from '../../assets/images/male.png';
 import femaleIcon from '../../assets/images/female.png';
 import { useAuthState } from '../../Context';
 
-function ChatList() {
+function ChatList({ handleClick }) {
   const { userChatList } = useAuthState();
   console.log(userChatList);
   return (
@@ -18,7 +18,7 @@ function ChatList() {
         {userChatList
           ? userChatList.map((username) => {
               return (
-                <div className="chat-preview">
+                <div className="chat-preview" onClick={handleClick(username)}>
                   <div className="user-img-holder">
                     <img src={maleIcon} alt="user icon" />
                   </div>
