@@ -9,12 +9,12 @@ function Navbar() {
     <div className="nav-container">
       <div className="nav-top">
         <div id="logo-holder">
-          <h1 className="logo">
+          <h1 className="home-logo">
             <em>Chatter</em>
           </h1>
         </div>
       </div>
-      <Profile />
+      {/* <Profile /> */}
       <ChatList />
       <Options />
     </div>

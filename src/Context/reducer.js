@@ -6,6 +6,10 @@ import {
   SET_USERS,
   SET_ACTIVE_CHAT,
   SET_USER_CHATS,
+  SET_CHAT_ROOM,
+  SET_CHAT_ROOM_USER,
+  SET_CHAT_ROOM_MESSAGES,
+  SET_CHAT_SOCKET,
 } from './reducerActions';
 
 let user = localStorage.getItem('current_user')
@@ -53,15 +57,35 @@ export const AuthReducer = (state = initialState, action) => {
         ...state,
         usersList: action.payload,
       };
-    case SET_ACTIVE_CHAT:
-      return {
-        ...state,
-        activeChat: action.payload,
-      };
     case SET_USER_CHATS:
       return {
         ...state,
         userChatList: action.payload,
+      };
+    case SET_CHAT_ROOM_USER:
+      return {
+        ...state,
+        chatRoomUser: action.payload,
+      };
+    case SET_CHAT_ROOM:
+      return {
+        ...state,
+        chatRoom: action.payload,
+      };
+    case SET_CHAT_SOCKET:
+      return {
+        ...state,
+        chatSocket: action.payload,
+      };
+    case SET_CHAT_ROOM_MESSAGES:
+      return {
+        ...state,
+        chatRoomMessages: action.payload,
+      };
+    case SET_ACTIVE_CHAT:
+      return {
+        ...state,
+        activeChat: action.payload,
       };
     case 'SET_SOCKET':
       return {

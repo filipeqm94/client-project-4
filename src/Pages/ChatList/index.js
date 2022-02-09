@@ -1,3 +1,4 @@
+import './styles.scss';
 import maleIcon from '../../assets/images/male.png';
 import femaleIcon from '../../assets/images/female.png';
 import { useAuthState } from '../../Context';
@@ -9,7 +10,7 @@ function ChatList() {
     <div className="chatlist-container">
       <div className="chat-group">
         {/* ex: friends (saved users), active chats */}
-        <h3>Chats</h3>
+        <h3>Active Chats</h3>
         {/* <div className="chat-group-btns">
           <button className="active-group-btn">active</button>
           <button className="closed-group-btn">closed</button>

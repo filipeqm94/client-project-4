@@ -1,11 +1,11 @@
 import './styles.scss';
 import { useState } from 'react';
-import { useAuthState } from '../../../Context/context';
+import { useAuthState, useAuthDispatch } from '../../../Context/context';
 import sendIcon from '../../../assets/images/send.png';
 
-function MessageBox({ chatSocket }) {
+function MessageBox() {
   const [chatMessage, setChatMessage] = useState('');
-  const { user_id } = useAuthState();
+  const { user_id, chatSocket } = useAuthState();
 
   const changeHandler = (ev) => {
     setChatMessage(ev.target.value);
@@ -22,7 +22,7 @@ function MessageBox({ chatSocket }) {
       })
     );
 
-    setChatMessage("")
+    setChatMessage('');
   };
 
   return (
@@ -30,7 +30,11 @@ function MessageBox({ chatSocket }) {
       <div className="msg-box-form">
         <p id="chat-text-area"></p>
         <form>
-          <textarea onChange={changeHandler} value={chatMessage} className="message-box"></textarea>
+          <textarea
+            onChange={changeHandler}
+            value={chatMessage}
+            className="message-box"
+          ></textarea>
           <button type="submit" value="Send" onClick={submitHandler}>
             <img src={sendIcon} alt="send icon" />
           </button>

@@ -4,12 +4,21 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAuthState, useAuthDispatch } from '../../Context/context';
 import axiosInstance from '../../Context/axios';
-import { setUsersList, setActiveChat } from '../../Context/actions';
-import { useState } from 'react';
+import {
+  setUsersList,
+  setActiveChat,
+  setChatRoom,
+  setChatSocket,
+} from '../../Context/actions';
 
-function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
-  const { username, usersList, primary_language, learning_language } =
-    useAuthState();
+function SideBar() {
+  const {
+    username,
+    usersList,
+    primary_language,
+    learning_language,
+    chatSocket,
+  } = useAuthState();
   const dispatch = useAuthDispatch();
   const navigate = useNavigate();
 
@@ -36,13 +45,13 @@ function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
     setActiveChat(dispatch, targetUser);
     // formulate room name
     const chatRoomName = [username, targetUser].sort().join('_');
-    setChatRoom(chatRoomName);
+    setChatRoom(dispatch, chatRoomName);
     const usernames = chatRoomName.split('_');
     const newChatSocket = new WebSocket(
       process.env.REACT_APP_WS_URL + chatRoomName + '/'
     );
 
-    setChatSocket(newChatSocket);
+    setChatSocket(dispatch, newChatSocket);
     newChatSocket.addEventListener('open', (event) => {
       newChatSocket.send(
         JSON.stringify({

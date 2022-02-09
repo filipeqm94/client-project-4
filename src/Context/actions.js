@@ -6,6 +6,11 @@ import {
   SET_USERS,
   SET_ACTIVE_CHAT,
   SET_USER_CHATS,
+  SET_CHAT_ROOM,
+  SET_CHAT_ROOM_USER,
+  SET_SOCKET,
+  SET_CHAT_ROOM_MESSAGES,
+  SET_CHAT_SOCKET,
 } from './reducerActions';
 import axiosInstance from './axios';
 
@@ -63,6 +68,22 @@ export const setActiveChat = async (dispatch, payload) => {
 
 export const setUserChatList = async (dispatch, payload) => {
   dispatch({ type: SET_USER_CHATS, payload });
+};
+
+export const setChatRoom = async (dispatch, payload) => {
+  dispatch({ type: SET_CHAT_ROOM, payload });
+};
+
+export const setChatRoomUser = async (dispatch, payload) => {
+  dispatch({ type: SET_CHAT_ROOM_USER, payload });
+};
+
+export const setChatRoomMessages = async (dispatch, payload) => {
+  dispatch({ type: SET_CHAT_ROOM_MESSAGES, payload });
+};
+
+export const setChatSocket = async (dispatch, payload) => {
+  dispatch({ type: SET_CHAT_SOCKET, payload });
 };
 
 export const setSocket = async (dispatch, payload) => {

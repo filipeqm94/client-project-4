@@ -1,7 +1,9 @@
 import './styles.scss';
 import { useEffect } from 'react';
+import { useAuthState } from '../../../Context';
 
-function Chat({ messages, id }) {
+function Chat({ id }) {
+  const { chatRoomMessages } = useAuthState();
   function scrollBottom() {
     const msgContainer =
       document.getElementsByClassName('chat-msg-container')[0];
@@ -10,12 +12,12 @@ function Chat({ messages, id }) {
 
   useEffect(() => {
     scrollBottom();
-  }, [messages]);
+  }, [chatRoomMessages]);
 
   return (
     <div className="chat-msg-container">
-      {messages
-        ? messages.map((message, index) => {
+      {chatRoomMessages
+        ? chatRoomMessages.map((message, index) => {
             return (
               <div
                 className={`message ${
