@@ -18,7 +18,10 @@ function ChatList({ handleClick }) {
         {userChatList
           ? userChatList.map((username) => {
               return (
-                <div className="chat-preview" onClick={handleClick(username)}>
+                <div
+                  className="chat-preview"
+                  onClick={() => handleClick(username)}
+                >
                   <div className="user-img-holder">
                     <img src={maleIcon} alt="user icon" />
                   </div>
