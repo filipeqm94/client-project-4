@@ -1,0 +1,31 @@
+.prof-container {
+  grid-row: 3;
+}
+
+.prof-top {
+  // padding-left: 15px;s
+}
+
+#username {
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.prof-info {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+
+  * {
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}

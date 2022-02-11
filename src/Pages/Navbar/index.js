@@ -1,16 +1,21 @@
+import './styles.scss';
 import Profile from '../Profile';
 import ChatList from '../ChatList';
 import Options from '../Options';
+import chatterLogo from '../../assets/images/chatter-logo.png';
 
-function Navbar() {
+function Navbar({ handleClick }) {
   return (
     <div className="nav-container">
       <div className="nav-top">
-        <h1>Chatter</h1>
-        <h1>logo here</h1>
+        <div id="logo-holder">
+          <h1 className="home-logo">
+            <em>Chatter</em>
+          </h1>
+        </div>
       </div>
-      <Profile />
-      <ChatList />
+      {/* <Profile /> */}
+      <ChatList handleClick={handleClick} />
       <Options />
     </div>
   );
