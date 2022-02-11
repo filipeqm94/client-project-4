@@ -82,6 +82,10 @@ export const setChatRoomMessages = async (dispatch, payload) => {
   dispatch({ type: SET_CHAT_ROOM_MESSAGES, payload });
 };
 
+export const setNewMessage = async (dispatch, payload) => {
+  dispatch({ type: 'NEW_MESSAGE', payload });
+};
+
 export const setChatSocket = async (dispatch, payload) => {
   dispatch({ type: SET_CHAT_SOCKET, payload });
 };

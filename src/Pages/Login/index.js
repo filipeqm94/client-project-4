@@ -83,7 +83,7 @@ function Login(props) {
           <div>
             <a
               href="https://github.com/filipeqm94/client-project-4"
-              target=" _blank"
+              target="_blank" rel='noreferrer'
             >
               <img src={ghLogo} alt="GitHub Logo" />
               <h4>source code</h4>
@@ -127,9 +127,6 @@ function Login(props) {
               <Link to="/signup" id="create_acct_btn">
                 <h4>Create an account</h4>
               </Link>
-              <Routes>
-                <Route path="/signup" element={SignUp}></Route>
-              </Routes>
             </div>
           </div>
         </div>

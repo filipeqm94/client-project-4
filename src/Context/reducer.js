@@ -23,6 +23,7 @@ export const initialState = {
   errorMessage: '',
   usersList: [],
   chatSocket: '',
+  chatRoomMessages: [],
 };
 
 export const AuthReducer = (state = initialState, action) => {
@@ -81,6 +82,11 @@ export const AuthReducer = (state = initialState, action) => {
       return {
         ...state,
         chatRoomMessages: action.payload,
+      };
+    case 'NEW_MESSAGE':
+      return {
+        ...state,
+        chatRoomMessages: [...state.chatRoomMessages, action.payload],
       };
     case SET_ACTIVE_CHAT:
       return {
