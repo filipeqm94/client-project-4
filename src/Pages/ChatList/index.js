@@ -5,7 +5,6 @@ import { useAuthState } from '../../Context';
 
 function ChatList({ handleClick }) {
   const { userChatList } = useAuthState();
-  console.log(userChatList);
   return (
     <div className="chatlist-container">
       <div className="chat-group">
@@ -21,6 +20,7 @@ function ChatList({ handleClick }) {
                 <div
                   className="chat-preview"
                   onClick={() => handleClick(username)}
+                  key={username}
                 >
                   <div className="user-img-holder">
                     <img src={maleIcon} alt="user icon" />

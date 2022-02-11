@@ -5,7 +5,7 @@ import SideBar from '../SideBar';
 import { useState } from 'react';
 import { useAuthState, useAuthDispatch } from '../../Context';
 import {
-  setChatRoomMessages,
+  setNewMessage,
   setActiveChat,
   setChatRoom,
   setChatSocket,
@@ -41,10 +41,10 @@ function Home() {
     });
   }
 
-  if (chatSocket != false) {
+  if (chatSocket !== '') {
     chatSocket.onmessage = function (e) {
       const data = JSON.parse(e.data);
-      setChatRoomMessages((prevMessages) => [...prevMessages, data]);
+      setNewMessage(dispatch, data);
     };
   }
   return (

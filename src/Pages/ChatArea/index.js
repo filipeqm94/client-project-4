@@ -8,7 +8,7 @@ import MessageBox from './MessageBox';
 import userIcon from '../../assets/images/user.png';
 
 function ChatArea() {
-  const { user_id, activeChat, chatRoom, chatRoomMessages } = useAuthState();
+  const { user_id, activeChat, chatRoom } = useAuthState();
   const dispatch = useAuthDispatch();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function ChatArea() {
     <div className="chat-area-container">
       <div className="chat-area-info">
         <div className="user-img-holder">
-          <img src={userIcon} />
+          <img src={userIcon} alt="user" />
           <h3>{activeChat}</h3>
         </div>
       </div>
