@@ -1,46 +1,39 @@
+import './styles.scss';
 import maleIcon from '../../assets/images/male.png';
 import femaleIcon from '../../assets/images/female.png';
+import { useAuthState } from '../../Context';
 
-function ChatList() {
+function ChatList({ handleClick }) {
+  const { userChatList } = useAuthState();
+  console.log(userChatList);
   return (
     <div className="chatlist-container">
       <div className="chat-group">
         {/* ex: friends (saved users), active chats */}
-        <h3>Chats</h3>
-        <div className="chat-group-btns">
+        <h3>Active Chats</h3>
+        {/* <div className="chat-group-btns">
           <button className="active-group-btn">active</button>
           <button className="closed-group-btn">closed</button>
-        </div>
-        <div className="chat-preview">
-          <div className="user-img-holder">
-            <img src={maleIcon} alt="user icon" />
-          </div>
-          <div className="chat-info">
-            <h3 className="chat-info-name">Victor W.</h3>
-            {/* chat preview - truncated */}
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-        <div className="chat-preview">
-          <div className="user-img-holder">
-            <img src={maleIcon} alt="user icon" />
-          </div>
-          <div className="chat-info">
-            <h3 className="chat-info-name">Filipe M.</h3>
-            {/* chat preview - truncated */}
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-        <div className="chat-preview">
-          <div className="user-img-holder">
-            <img src={femaleIcon} alt="user icon" />
-          </div>
-          <div className="chat-info">
-            <h3 className="chat-info-name">Anne B.</h3>
-            {/* chat preview - truncated */}
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
+        </div> */}
+        {userChatList
+          ? userChatList.map((username) => {
+              return (
+                <div
+                  className="chat-preview"
+                  onClick={() => handleClick(username)}
+                >
+                  <div className="user-img-holder">
+                    <img src={maleIcon} alt="user icon" />
+                  </div>
+                  <div className="chat-info">
+                    <h4 className="chat-info-name">{username}</h4>
+                    {/* chat preview - truncated */}
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+              );
+            })
+          : null}
       </div>
     </div>
   );

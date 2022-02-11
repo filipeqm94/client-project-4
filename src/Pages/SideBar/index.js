@@ -4,12 +4,21 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAuthState, useAuthDispatch } from '../../Context/context';
 import axiosInstance from '../../Context/axios';
-import { setUsersList, setActiveChat } from '../../Context/actions';
-import { useState } from 'react';
+import {
+  setUsersList,
+  setActiveChat,
+  setChatRoom,
+  setChatSocket,
+} from '../../Context/actions';
 
-function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
-  const { username, usersList, primary_language, learning_language } =
-    useAuthState();
+function SideBar({ handleClick }) {
+  const {
+    username,
+    usersList,
+    primary_language,
+    learning_language,
+    chatSocket,
+  } = useAuthState();
   const dispatch = useAuthDispatch();
   const navigate = useNavigate();
 
@@ -27,32 +36,6 @@ function SideBar({ setChatSocket, chatSocket, setChatRoom }) {
         navigate('/login');
       });
   }, []);
-
-  function handleClick(targetUser) {
-    // if there is an existing socket, close it
-    if (chatSocket) {
-      chatSocket.close();
-    }
-    setActiveChat(dispatch, targetUser);
-    // formulate room name
-    const chatRoomName = [username, targetUser].sort().join('_');
-    setChatRoom(chatRoomName);
-    const usernames = chatRoomName.split('_');
-    const newChatSocket = new WebSocket(
-      process.env.REACT_APP_WS_URL + chatRoomName + '/'
-    );
-
-    setChatSocket(newChatSocket);
-    newChatSocket.addEventListener('open', (event) => {
-      newChatSocket.send(
-        JSON.stringify({
-          type: 'open_chat',
-          user_one: usernames[0],
-          user_two: usernames[1],
-        })
-      );
-    });
-  }
 
   return (
     <div className="sidebar-container">

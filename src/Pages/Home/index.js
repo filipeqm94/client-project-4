@@ -3,34 +3,55 @@ import Navbar from '../Navbar';
 import ChatArea from '../ChatArea';
 import SideBar from '../SideBar';
 import { useState } from 'react';
+import { useAuthState, useAuthDispatch } from '../../Context';
+import {
+  setChatRoomMessages,
+  setActiveChat,
+  setChatRoom,
+  setChatSocket,
+} from '../../Context/actions';
 
 function Home() {
-  const [chatSocket, setChatSocket] = useState();
-  const [chatRoom, setChatRoom] = useState('');
-  const [messages, setMessages] = useState([]);
+  const { chatSocket, username } = useAuthState();
+  const dispatch = useAuthDispatch();
 
-  if (chatSocket !== undefined) {
-    chatSocket.onmessage = function (e) {
-      const data = JSON.parse(e.data);
-      setMessages((prevMessages) => [...prevMessages, data]);
-    };
+  function handleClick(targetUser) {
+    // if there is an existing socket, close it
+    if (chatSocket) {
+      chatSocket.close();
+    }
+    setActiveChat(dispatch, targetUser);
+    // formulate room name
+    const chatRoomName = [username, targetUser].sort().join('_');
+    setChatRoom(dispatch, chatRoomName);
+    const usernames = chatRoomName.split('_');
+    const newChatSocket = new WebSocket(
+      process.env.REACT_APP_WS_URL + chatRoomName + '/'
+    );
+
+    setChatSocket(dispatch, newChatSocket);
+    newChatSocket.addEventListener('open', (event) => {
+      newChatSocket.send(
+        JSON.stringify({
+          type: 'open_chat',
+          user_one: usernames[0],
+          user_two: usernames[1],
+        })
+      );
+    });
   }
 
+  if (chatSocket != false) {
+    chatSocket.onmessage = function (e) {
+      const data = JSON.parse(e.data);
+      setChatRoomMessages((prevMessages) => [...prevMessages, data]);
+    };
+  }
   return (
     <div className="main">
-      <Navbar />
-      <ChatArea
-        chatSocket={chatSocket}
-        setChatSocket={setChatSocket}
-        chatRoom={chatRoom}
-        messages={messages}
-        setMessages={setMessages}
-      />
-      <SideBar
-        chatSocket={chatSocket}
-        setChatSocket={setChatSocket}
-        setChatRoom={setChatRoom}
-      />
+      <Navbar handleClick={handleClick} />
+      <ChatArea chatSocket={chatSocket} />
+      <SideBar chatSocket={chatSocket} handleClick={handleClick} />
     </div>
   );
 }
