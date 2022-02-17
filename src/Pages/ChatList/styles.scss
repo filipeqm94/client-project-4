@@ -26,10 +26,18 @@
 }
 
 .chat-preview {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   width: 100%;
   display: flex;
-  // border: 1px solid #7d5fff;
+}
+
+.chat-preview:hover {
+  background: #7d5fff;
+  cursor: pointer;
+
+  h4 {
+    color: white;
+  }
 }
 
 .chat-info {
@@ -45,10 +53,4 @@
   p {
     font-size: 14px;
   }
-}
-
-.chat-info:hover {
-  cursor: pointer;
-  background: white;
-  color: #2b2039;
 }

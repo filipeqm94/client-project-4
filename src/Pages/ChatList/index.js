@@ -28,7 +28,7 @@ function ChatList({ handleClick }) {
                   <div className="chat-info">
                     <h4 className="chat-info-name">{username}</h4>
                     {/* chat preview - truncated */}
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    {/* <p>Lorem ipsum dolor sit amet.</p> */}
                   </div>
                 </div>
               );
