@@ -27,6 +27,8 @@ Learning a new language? What better way to practice than to chat live with flue
 
 # How to Use Chatter
 
+It's quick and easy to get started with Chatter. First, if you don't have an account with us, follow this link: <a href='https://project-4-react.herokuapp.com/signup' target='_blank'>Create an account</a>
+
 # Tech Stack
 
 # Development
