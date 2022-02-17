@@ -24,14 +24,24 @@ body {
   max-width: 1100px;
 }
 
+.logo,
 .home-logo {
   width: fit-content;
   display: block;
-  margin: 30px 0px 30px 0px;
   padding: 0px 25px 0px 25px;
   font-family: 'Croissant One', cursive !important;
   text-shadow: -2px -2px 1px #f53b57, -3.5px -3.5px 1px #34e7e4,
     -5px -5px 1px #7d5fff;
   color: #ffdd59;
   letter-spacing: 1px;
+}
+
+.home-logo {
+  font-size: 48px;
+  margin: 30px 0px 30px 0px;
+}
+
+.logo {
+  font-size: 68px !important;
+  margin: 0 auto;
 }
